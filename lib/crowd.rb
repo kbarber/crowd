@@ -4,6 +4,8 @@
 #  I hereby place this work that I have authored into the public domain
 #  and in the process abandon all copyright protection.
 #
+require 'sha1'
+require 'base64'
 require 'rubygems'
 gem 'soap4r'
 
@@ -598,5 +600,41 @@ class Crowd
       response = yield
     end
     response
+  end
+
+  ##
+  # Returns the domain configured in Crowd or null if no domain has been set.
+  #
+  # *Deprecated:* This method has been superceded by get_cookie_config.
+  def self.get_domain
+    response = authenticated_connection do
+      arg = GetDomain.new(@@application_token)
+      server.getDomain(arg)
+    end
+
+    case response
+    when GetDomainResponse
+      return response.out
+    else
+      raise AuthenticationException, response
+    end
+  end
+
+  ##
+  # Updates the password credential for a principal who is in the application's assigned directory.
+  def self.update_principal_credential(principal, password)
+    response = authenticated_connection do
+      hash = Digest::SHA512.new.update(password).digest
+      cred = PasswordCredential.new(Base64::encode64(hash).gsub(/\n/, ''))
+      arg = UpdatePrincipalCredential.new(@@application_token, principal, cred)
+      server.updatePrincipalCredential(arg)
+    end
+
+    case response
+    when UpdatePrincipalCredentialResponse
+      return nil
+    else
+      raise AuthenticationException, response
+    end
   end
 end
