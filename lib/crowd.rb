@@ -590,8 +590,16 @@ class Crowd
     raise AuthenticationConnectionException, e
   rescue ::SOAP::FaultError => e
     # We'll retry once more on any fault.
-    authenticate_application
-    response =  yield
+    begin
+      authenticate_application
+      response =  yield
+    rescue AuthenticationException => e
+      raise AuthenticationException, e
+    rescue Errno::ECONNREFUSED => e
+      raise AuthenticationConnectionException, e
+    rescue Exception => e
+      raise AuthenticationException, e
+    end
   rescue Exception, e
     raise AuthenticationException, e
   ensure
