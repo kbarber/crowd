@@ -4,13 +4,13 @@
 # -*- encoding: utf-8 -*-
 
 Gem::Specification.new do |s|
-  s.name = %q{crowd}
+  s.name = %q{stefanwille-crowd}
   s.version = "0.5.8"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Stefan Wille", "Evgeny Zislis", "Jason Rimmer & Daniel Morrison"]
-  s.date = %q{2010-07-13}
-  s.description = %q{A client for Atlassian[http://www.atlassian.com] Crowd[http://www.atlassian.com/crowd] v2.0.3}
+  s.date = %q{2010-07-14}
+  s.description = %q{A client for Atlassian[http://www.atlassian.com] Crowd[http://www.atlassian.com/crowd] v2.0.5}
   s.email = %q{post @nospam@ stefanwille.com}
   s.extra_rdoc_files = [
     "README.rdoc"
@@ -21,15 +21,13 @@ Gem::Specification.new do |s|
      "README.rdoc",
      "Rakefile",
      "crowd.gemspec",
-     "demo/controllers/demo_controller.rb",
-     "demo/demo.rb",
-     "demo/views/demo/index.html.erb",
-     "demo/views/layouts/layout.html.erb",
+     "demo/crowd_demo.rb",
      "lib/crowd.rb",
      "lib/crowd/http/request.rb",
      "lib/crowd/http/response.rb",
      "lib/crowd/http/sso.rb",
      "lib/crowd/soap/SecurityServerClient.rb",
+     "lib/crowd/soap/crowd-2.0.5.wsdl",
      "lib/crowd/soap/default.rb",
      "lib/crowd/soap/driver.rb",
      "lib/crowd/soap/mapping_registry.rb",
@@ -51,15 +49,12 @@ Gem::Specification.new do |s|
 
     if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
       s.add_runtime_dependency(%q<soap4r>, [">= 0"])
-      s.add_runtime_dependency(%q<soap4r>, [">= 0"])
       s.add_development_dependency(%q<rspec>, [">= 0"])
     else
-      s.add_dependency(%q<soap4r>, [">= 0"])
       s.add_dependency(%q<soap4r>, [">= 0"])
       s.add_dependency(%q<rspec>, [">= 0"])
     end
   else
-    s.add_dependency(%q<soap4r>, [">= 0"])
     s.add_dependency(%q<soap4r>, [">= 0"])
     s.add_dependency(%q<rspec>, [">= 0"])
   end
