@@ -26,7 +26,7 @@ end
 begin
   require 'jeweler'
   Jeweler::Tasks.new do |gemspec|
-    gemspec.name = "stefanwille-crowd"
+    gemspec.name = "crowd-stefanwille"
     gemspec.version = Crowd::Version::STRING
     gemspec.summary = "Ruby client for Atlassian Crowd"
     gemspec.description = "A client for Atlassian[http://www.atlassian.com] Crowd[http://www.atlassian.com/crowd] v2.0.5"

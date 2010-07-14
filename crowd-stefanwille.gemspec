@@ -4,7 +4,7 @@
 # -*- encoding: utf-8 -*-
 
 Gem::Specification.new do |s|
-  s.name = %q{stefanwille-crowd}
+  s.name = %q{crowd-stefanwille}
   s.version = "0.5.8"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
@@ -20,7 +20,6 @@ Gem::Specification.new do |s|
      "History.txt",
      "README.rdoc",
      "Rakefile",
-     "crowd.gemspec",
      "demo/crowd_demo.rb",
      "lib/crowd.rb",
      "lib/crowd/http/request.rb",
@@ -32,7 +31,8 @@ Gem::Specification.new do |s|
      "lib/crowd/soap/driver.rb",
      "lib/crowd/soap/mapping_registry.rb",
      "lib/crowd/version.rb",
-     "spec/crowd_spec.rb"
+     "spec/crowd_spec.rb",
+     "stefanwille-crowd.gemspec"
   ]
   s.homepage = %q{http://github.com/stefanwille/crowd}
   s.rdoc_options = ["--charset=UTF-8"]
