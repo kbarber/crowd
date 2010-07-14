@@ -43,12 +43,12 @@ class ValidationFactor
   end
 end
 
-# {http://authentication.integration.crowd.atlassian.com}PrincipalAuthenticationContext
+# {http://authentication.integration.crowd.atlassian.com}UserAuthenticationContext
 #   application - SOAP::SOAPString
 #   credential - PasswordCredential
 #   name - SOAP::SOAPString
 #   validationFactors - ArrayOfValidationFactor
-class PrincipalAuthenticationContext
+class UserAuthenticationContext
   attr_accessor :application
   attr_accessor :credential
   attr_accessor :name
@@ -92,7 +92,7 @@ end
 #   attributes - ArrayOfSOAPAttribute
 #   conception - SOAP::SOAPDateTime
 #   description - SOAP::SOAPString
-#   directoryID - SOAP::SOAPLong
+#   directoryId - SOAP::SOAPLong
 #   groupMembers - ArrayOfString
 #   lastModified - SOAP::SOAPDateTime
 #   name - SOAP::SOAPString
@@ -102,18 +102,18 @@ class SOAPNestableGroup
   attr_accessor :attributes
   attr_accessor :conception
   attr_accessor :description
-  attr_accessor :directoryID
+  attr_accessor :directoryId
   attr_accessor :groupMembers
   attr_accessor :lastModified
   attr_accessor :name
 
-  def initialize(iD = nil, active = nil, attributes = nil, conception = nil, description = nil, directoryID = nil, groupMembers = nil, lastModified = nil, name = nil)
+  def initialize(iD = nil, active = nil, attributes = nil, conception = nil, description = nil, directoryId = nil, groupMembers = nil, lastModified = nil, name = nil)
     @iD = iD
     @active = active
     @attributes = attributes
     @conception = conception
     @description = description
-    @directoryID = directoryID
+    @directoryId = directoryId
     @groupMembers = groupMembers
     @lastModified = lastModified
     @name = name
@@ -143,7 +143,7 @@ end
 #   attributes - ArrayOfSOAPAttribute
 #   conception - SOAP::SOAPDateTime
 #   description - SOAP::SOAPString
-#   directoryID - SOAP::SOAPLong
+#   directoryId - SOAP::SOAPLong
 #   lastModified - SOAP::SOAPDateTime
 #   members - ArrayOfString
 #   name - SOAP::SOAPString
@@ -153,18 +153,18 @@ class SOAPGroup
   attr_accessor :attributes
   attr_accessor :conception
   attr_accessor :description
-  attr_accessor :directoryID
+  attr_accessor :directoryId
   attr_accessor :lastModified
   attr_accessor :members
   attr_accessor :name
 
-  def initialize(iD = nil, active = nil, attributes = nil, conception = nil, description = nil, directoryID = nil, lastModified = nil, members = nil, name = nil)
+  def initialize(iD = nil, active = nil, attributes = nil, conception = nil, description = nil, directoryId = nil, lastModified = nil, members = nil, name = nil)
     @iD = iD
     @active = active
     @attributes = attributes
     @conception = conception
     @description = description
-    @directoryID = directoryID
+    @directoryId = directoryId
     @lastModified = lastModified
     @members = members
     @name = name
@@ -177,7 +177,7 @@ end
 #   attributes - ArrayOfSOAPAttribute
 #   conception - SOAP::SOAPDateTime
 #   description - SOAP::SOAPString
-#   directoryID - SOAP::SOAPLong
+#   directoryId - SOAP::SOAPLong
 #   lastModified - SOAP::SOAPDateTime
 #   name - SOAP::SOAPString
 class SOAPPrincipal
@@ -186,17 +186,17 @@ class SOAPPrincipal
   attr_accessor :attributes
   attr_accessor :conception
   attr_accessor :description
-  attr_accessor :directoryID
+  attr_accessor :directoryId
   attr_accessor :lastModified
   attr_accessor :name
 
-  def initialize(iD = nil, active = nil, attributes = nil, conception = nil, description = nil, directoryID = nil, lastModified = nil, name = nil)
+  def initialize(iD = nil, active = nil, attributes = nil, conception = nil, description = nil, directoryId = nil, lastModified = nil, name = nil)
     @iD = iD
     @active = active
     @attributes = attributes
     @conception = conception
     @description = description
-    @directoryID = directoryID
+    @directoryId = directoryId
     @lastModified = lastModified
     @name = name
   end
@@ -242,7 +242,7 @@ end
 #   attributes - ArrayOfSOAPAttribute
 #   conception - SOAP::SOAPDateTime
 #   description - SOAP::SOAPString
-#   directoryID - SOAP::SOAPLong
+#   directoryId - SOAP::SOAPLong
 #   lastModified - SOAP::SOAPDateTime
 #   members - ArrayOfString
 #   name - SOAP::SOAPString
@@ -252,21 +252,38 @@ class SOAPRole
   attr_accessor :attributes
   attr_accessor :conception
   attr_accessor :description
-  attr_accessor :directoryID
+  attr_accessor :directoryId
   attr_accessor :lastModified
   attr_accessor :members
   attr_accessor :name
 
-  def initialize(iD = nil, active = nil, attributes = nil, conception = nil, description = nil, directoryID = nil, lastModified = nil, members = nil, name = nil)
+  def initialize(iD = nil, active = nil, attributes = nil, conception = nil, description = nil, directoryId = nil, lastModified = nil, members = nil, name = nil)
     @iD = iD
     @active = active
     @attributes = attributes
     @conception = conception
     @description = description
-    @directoryID = directoryID
+    @directoryId = directoryId
     @lastModified = lastModified
     @members = members
     @name = name
+  end
+end
+
+# {http://soap.integration.crowd.atlassian.com}ArrayOfSOAPPrincipalWithCredential
+class ArrayOfSOAPPrincipalWithCredential < ::Array
+end
+
+# {http://soap.integration.crowd.atlassian.com}SOAPPrincipalWithCredential
+#   passwordCredential - PasswordCredential
+#   principal - SOAPPrincipal
+class SOAPPrincipalWithCredential
+  attr_accessor :passwordCredential
+  attr_accessor :principal
+
+  def initialize(passwordCredential = nil, principal = nil)
+    @passwordCredential = passwordCredential
+    @principal = principal
   end
 end
 
@@ -285,8 +302,12 @@ class InvalidAuthorizationTokenException
 end
 
 # {http://exception.integration.crowd.atlassian.com}InvalidGroupException
+#   entity - DirectoryEntity
 class InvalidGroupException
-  def initialize
+  attr_accessor :entity
+
+  def initialize(entity = nil)
+    @entity = entity
   end
 end
 
@@ -314,14 +335,24 @@ class InvalidCredentialException
   end
 end
 
-# {http://exception.integration.crowd.atlassian.com}InvalidPrincipalException
-class InvalidPrincipalException
-  def initialize
+# {http://exception.integration.crowd.atlassian.com}InvalidUserException
+#   entity - DirectoryEntity
+class InvalidUserException
+  attr_accessor :entity
+
+  def initialize(entity = nil)
+    @entity = entity
   end
 end
 
 # {http://exception.integration.crowd.atlassian.com}ApplicationAccessDeniedException
 class ApplicationAccessDeniedException
+  def initialize
+  end
+end
+
+# {http://exception.integration.crowd.atlassian.com}ExpiredCredentialException
+class ExpiredCredentialException
   def initialize
   end
 end
@@ -333,14 +364,35 @@ class InvalidAuthenticationException
 end
 
 # {http://exception.integration.crowd.atlassian.com}InactiveAccountException
+#   user - User
 class InactiveAccountException
-  def initialize
+  attr_accessor :user
+
+  def initialize(user = nil)
+    @user = user
+  end
+end
+
+# {http://exception.integration.crowd.atlassian.com}BulkAddFailedException
+#   existingUsers - ArrayOfString
+#   failedUsers - ArrayOfString
+class BulkAddFailedException
+  attr_accessor :existingUsers
+  attr_accessor :failedUsers
+
+  def initialize(existingUsers = nil, failedUsers = nil)
+    @existingUsers = existingUsers
+    @failedUsers = failedUsers
   end
 end
 
 # {http://exception.integration.crowd.atlassian.com}InvalidRoleException
+#   entity - DirectoryEntity
 class InvalidRoleException
-  def initialize
+  attr_accessor :entity
+
+  def initialize(entity = nil)
+    @entity = entity
   end
 end
 
@@ -366,6 +418,50 @@ end
 # {http://lang.java}Throwable
 class Throwable
   def initialize
+  end
+end
+
+# {http://model.integration.crowd.atlassian.com}DirectoryEntity
+#   directoryId - SOAP::SOAPLong
+#   name - SOAP::SOAPString
+class DirectoryEntity
+  attr_accessor :directoryId
+  attr_accessor :name
+
+  def initialize(directoryId = nil, name = nil)
+    @directoryId = directoryId
+    @name = name
+  end
+end
+
+# {http://user.model.integration.crowd.atlassian.com}User
+#   active - SOAP::SOAPBoolean
+#   displayName - SOAP::SOAPString
+#   emailAddress - SOAP::SOAPString
+#   firstName - SOAP::SOAPString
+#   iconLocation - SOAP::SOAPString
+#   lastName - SOAP::SOAPString
+#   directoryId - SOAP::SOAPLong
+#   name - SOAP::SOAPString
+class User
+  attr_accessor :active
+  attr_accessor :displayName
+  attr_accessor :emailAddress
+  attr_accessor :firstName
+  attr_accessor :iconLocation
+  attr_accessor :lastName
+  attr_accessor :directoryId
+  attr_accessor :name
+
+  def initialize(active = nil, displayName = nil, emailAddress = nil, firstName = nil, iconLocation = nil, lastName = nil, directoryId = nil, name = nil)
+    @active = active
+    @displayName = displayName
+    @emailAddress = emailAddress
+    @firstName = firstName
+    @iconLocation = iconLocation
+    @lastName = lastName
+    @directoryId = directoryId
+    @name = name
   end
 end
 
@@ -835,6 +931,28 @@ class UpdateGroupResponse
   end
 end
 
+# {urn:SecurityServer}addAttributeToGroup
+#   in0 - AuthenticatedToken
+#   in1 - SOAP::SOAPString
+#   in2 - SOAPAttribute
+class AddAttributeToGroup
+  attr_accessor :in0
+  attr_accessor :in1
+  attr_accessor :in2
+
+  def initialize(in0 = nil, in1 = nil, in2 = nil)
+    @in0 = in0
+    @in1 = in1
+    @in2 = in2
+  end
+end
+
+# {urn:SecurityServer}addAttributeToGroupResponse
+class AddAttributeToGroupResponse
+  def initialize
+  end
+end
+
 # {urn:SecurityServer}findAllRoleNames
 #   in0 - AuthenticatedToken
 class FindAllRoleNames
@@ -921,6 +1039,29 @@ class FindGroupByNameResponse
   end
 end
 
+# {urn:SecurityServer}findGroupWithAttributesByName
+#   in0 - AuthenticatedToken
+#   in1 - SOAP::SOAPString
+class FindGroupWithAttributesByName
+  attr_accessor :in0
+  attr_accessor :in1
+
+  def initialize(in0 = nil, in1 = nil)
+    @in0 = in0
+    @in1 = in1
+  end
+end
+
+# {urn:SecurityServer}findGroupWithAttributesByNameResponse
+#   out - SOAPGroup
+class FindGroupWithAttributesByNameResponse
+  attr_accessor :out
+
+  def initialize(out = nil)
+    @out = out
+  end
+end
+
 # {urn:SecurityServer}removePrincipalFromRole
 #   in0 - AuthenticatedToken
 #   in1 - SOAP::SOAPString
@@ -943,9 +1084,32 @@ class RemovePrincipalFromRoleResponse
   end
 end
 
+# {urn:SecurityServer}findPrincipalWithAttributesByName
+#   in0 - AuthenticatedToken
+#   in1 - SOAP::SOAPString
+class FindPrincipalWithAttributesByName
+  attr_accessor :in0
+  attr_accessor :in1
+
+  def initialize(in0 = nil, in1 = nil)
+    @in0 = in0
+    @in1 = in1
+  end
+end
+
+# {urn:SecurityServer}findPrincipalWithAttributesByNameResponse
+#   out - SOAPPrincipal
+class FindPrincipalWithAttributesByNameResponse
+  attr_accessor :out
+
+  def initialize(out = nil)
+    @out = out
+  end
+end
+
 # {urn:SecurityServer}authenticatePrincipal
 #   in0 - AuthenticatedToken
-#   in1 - PrincipalAuthenticationContext
+#   in1 - UserAuthenticationContext
 class AuthenticatePrincipal
   attr_accessor :in0
   attr_accessor :in1
@@ -1030,6 +1194,47 @@ class RemoveGroupResponse
   end
 end
 
+# {urn:SecurityServer}removeAttributeFromGroup
+#   in0 - AuthenticatedToken
+#   in1 - SOAP::SOAPString
+#   in2 - SOAP::SOAPString
+class RemoveAttributeFromGroup
+  attr_accessor :in0
+  attr_accessor :in1
+  attr_accessor :in2
+
+  def initialize(in0 = nil, in1 = nil, in2 = nil)
+    @in0 = in0
+    @in1 = in1
+    @in2 = in2
+  end
+end
+
+# {urn:SecurityServer}removeAttributeFromGroupResponse
+class RemoveAttributeFromGroupResponse
+  def initialize
+  end
+end
+
+# {urn:SecurityServer}addAllPrincipals
+#   in0 - AuthenticatedToken
+#   in1 - ArrayOfSOAPPrincipalWithCredential
+class AddAllPrincipals
+  attr_accessor :in0
+  attr_accessor :in1
+
+  def initialize(in0 = nil, in1 = nil)
+    @in0 = in0
+    @in1 = in1
+  end
+end
+
+# {urn:SecurityServer}addAllPrincipalsResponse
+class AddAllPrincipalsResponse
+  def initialize
+  end
+end
+
 # {urn:SecurityServer}removeAttributeFromPrincipal
 #   in0 - AuthenticatedToken
 #   in1 - SOAP::SOAPString
@@ -1052,26 +1257,6 @@ class RemoveAttributeFromPrincipalResponse
   end
 end
 
-# {urn:SecurityServer}findAllPrincipalNames
-#   in0 - AuthenticatedToken
-class FindAllPrincipalNames
-  attr_accessor :in0
-
-  def initialize(in0 = nil)
-    @in0 = in0
-  end
-end
-
-# {urn:SecurityServer}findAllPrincipalNamesResponse
-#   out - ArrayOfString
-class FindAllPrincipalNamesResponse
-  attr_accessor :out
-
-  def initialize(out = nil)
-    @out = out
-  end
-end
-
 # {urn:SecurityServer}addRole
 #   in0 - AuthenticatedToken
 #   in1 - SOAPRole
@@ -1088,6 +1273,26 @@ end
 # {urn:SecurityServer}addRoleResponse
 #   out - SOAPRole
 class AddRoleResponse
+  attr_accessor :out
+
+  def initialize(out = nil)
+    @out = out
+  end
+end
+
+# {urn:SecurityServer}findAllPrincipalNames
+#   in0 - AuthenticatedToken
+class FindAllPrincipalNames
+  attr_accessor :in0
+
+  def initialize(in0 = nil)
+    @in0 = in0
+  end
+end
+
+# {urn:SecurityServer}findAllPrincipalNamesResponse
+#   out - ArrayOfString
+class FindAllPrincipalNamesResponse
   attr_accessor :out
 
   def initialize(out = nil)
@@ -1204,6 +1409,28 @@ end
 
 # {urn:SecurityServer}resetPrincipalCredentialResponse
 class ResetPrincipalCredentialResponse
+  def initialize
+  end
+end
+
+# {urn:SecurityServer}updateGroupAttribute
+#   in0 - AuthenticatedToken
+#   in1 - SOAP::SOAPString
+#   in2 - SOAPAttribute
+class UpdateGroupAttribute
+  attr_accessor :in0
+  attr_accessor :in1
+  attr_accessor :in2
+
+  def initialize(in0 = nil, in1 = nil, in2 = nil)
+    @in0 = in0
+    @in1 = in1
+    @in2 = in2
+  end
+end
+
+# {urn:SecurityServer}updateGroupAttributeResponse
+class UpdateGroupAttributeResponse
   def initialize
   end
 end

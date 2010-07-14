@@ -12,7 +12,7 @@ class SecurityServerPortType < ::SOAP::RPC::Driver
         ["out", "parameters", ["::SOAP::SOAPElement", "urn:SecurityServer", "findAllGroupRelationshipsResponse"]] ],
       { :request_style =>  :document, :request_use =>  :literal,
         :response_style => :document, :response_use => :literal,
-        :faults => {"RemoteException_"=>{:use=>"literal", :ns=>"urn:SecurityServer", :namespace=>nil, :name=>"RemoteException", :encodingstyle=>"document"}, "InvalidAuthorizationTokenException_"=>{:use=>"literal", :ns=>"urn:SecurityServer", :namespace=>nil, :name=>"InvalidAuthorizationTokenException", :encodingstyle=>"document"}} }
+        :faults => {"RemoteException_"=>{:use=>"literal", :name=>"RemoteException", :ns=>"urn:SecurityServer", :namespace=>nil, :encodingstyle=>"document"}, "InvalidAuthorizationTokenException_"=>{:use=>"literal", :name=>"InvalidAuthorizationTokenException", :ns=>"urn:SecurityServer", :namespace=>nil, :encodingstyle=>"document"}} }
     ],
     [ "",
       "addGroup",
@@ -20,7 +20,7 @@ class SecurityServerPortType < ::SOAP::RPC::Driver
         ["out", "parameters", ["::SOAP::SOAPElement", "urn:SecurityServer", "addGroupResponse"]] ],
       { :request_style =>  :document, :request_use =>  :literal,
         :response_style => :document, :response_use => :literal,
-        :faults => {"RemoteException_"=>{:use=>"literal", :ns=>"urn:SecurityServer", :namespace=>nil, :name=>"RemoteException", :encodingstyle=>"document"}, "InvalidGroupException_"=>{:use=>"literal", :ns=>"urn:SecurityServer", :namespace=>nil, :name=>"InvalidGroupException", :encodingstyle=>"document"}, "InvalidAuthorizationTokenException_"=>{:use=>"literal", :ns=>"urn:SecurityServer", :namespace=>nil, :name=>"InvalidAuthorizationTokenException", :encodingstyle=>"document"}, "ApplicationPermissionException_"=>{:use=>"literal", :ns=>"urn:SecurityServer", :namespace=>nil, :name=>"ApplicationPermissionException", :encodingstyle=>"document"}} }
+        :faults => {"RemoteException_"=>{:use=>"literal", :name=>"RemoteException", :ns=>"urn:SecurityServer", :namespace=>nil, :encodingstyle=>"document"}, "InvalidGroupException_"=>{:use=>"literal", :name=>"InvalidGroupException", :ns=>"urn:SecurityServer", :namespace=>nil, :encodingstyle=>"document"}, "InvalidAuthorizationTokenException_"=>{:use=>"literal", :name=>"InvalidAuthorizationTokenException", :ns=>"urn:SecurityServer", :namespace=>nil, :encodingstyle=>"document"}, "ApplicationPermissionException_"=>{:use=>"literal", :name=>"ApplicationPermissionException", :ns=>"urn:SecurityServer", :namespace=>nil, :encodingstyle=>"document"}} }
     ],
     [ "",
       "addPrincipalToRole",
@@ -28,7 +28,7 @@ class SecurityServerPortType < ::SOAP::RPC::Driver
         ["out", "parameters", ["::SOAP::SOAPElement", "urn:SecurityServer", "addPrincipalToRoleResponse"]] ],
       { :request_style =>  :document, :request_use =>  :literal,
         :response_style => :document, :response_use => :literal,
-        :faults => {"RemoteException_"=>{:use=>"literal", :ns=>"urn:SecurityServer", :namespace=>nil, :name=>"RemoteException", :encodingstyle=>"document"}, "InvalidAuthorizationTokenException_"=>{:use=>"literal", :ns=>"urn:SecurityServer", :namespace=>nil, :name=>"InvalidAuthorizationTokenException", :encodingstyle=>"document"}, "ApplicationPermissionException_"=>{:use=>"literal", :ns=>"urn:SecurityServer", :namespace=>nil, :name=>"ApplicationPermissionException", :encodingstyle=>"document"}, "ObjectNotFoundException_"=>{:use=>"literal", :ns=>"urn:SecurityServer", :namespace=>nil, :name=>"ObjectNotFoundException", :encodingstyle=>"document"}} }
+        :faults => {"RemoteException_"=>{:use=>"literal", :name=>"RemoteException", :ns=>"urn:SecurityServer", :namespace=>nil, :encodingstyle=>"document"}, "InvalidAuthorizationTokenException_"=>{:use=>"literal", :name=>"InvalidAuthorizationTokenException", :ns=>"urn:SecurityServer", :namespace=>nil, :encodingstyle=>"document"}, "ApplicationPermissionException_"=>{:use=>"literal", :name=>"ApplicationPermissionException", :ns=>"urn:SecurityServer", :namespace=>nil, :encodingstyle=>"document"}, "ObjectNotFoundException_"=>{:use=>"literal", :name=>"ObjectNotFoundException", :ns=>"urn:SecurityServer", :namespace=>nil, :encodingstyle=>"document"}} }
     ],
     [ "",
       "findPrincipalByToken",
@@ -36,7 +36,7 @@ class SecurityServerPortType < ::SOAP::RPC::Driver
         ["out", "parameters", ["::SOAP::SOAPElement", "urn:SecurityServer", "findPrincipalByTokenResponse"]] ],
       { :request_style =>  :document, :request_use =>  :literal,
         :response_style => :document, :response_use => :literal,
-        :faults => {"RemoteException_"=>{:use=>"literal", :ns=>"urn:SecurityServer", :namespace=>nil, :name=>"RemoteException", :encodingstyle=>"document"}, "InvalidAuthorizationTokenException_"=>{:use=>"literal", :ns=>"urn:SecurityServer", :namespace=>nil, :name=>"InvalidAuthorizationTokenException", :encodingstyle=>"document"}, "InvalidTokenException_"=>{:use=>"literal", :ns=>"urn:SecurityServer", :namespace=>nil, :name=>"InvalidTokenException", :encodingstyle=>"document"}} }
+        :faults => {"RemoteException_"=>{:use=>"literal", :name=>"RemoteException", :ns=>"urn:SecurityServer", :namespace=>nil, :encodingstyle=>"document"}, "InvalidAuthorizationTokenException_"=>{:use=>"literal", :name=>"InvalidAuthorizationTokenException", :ns=>"urn:SecurityServer", :namespace=>nil, :encodingstyle=>"document"}, "InvalidTokenException_"=>{:use=>"literal", :name=>"InvalidTokenException", :ns=>"urn:SecurityServer", :namespace=>nil, :encodingstyle=>"document"}} }
     ],
     [ "",
       "updatePrincipalCredential",
@@ -44,7 +44,7 @@ class SecurityServerPortType < ::SOAP::RPC::Driver
         ["out", "parameters", ["::SOAP::SOAPElement", "urn:SecurityServer", "updatePrincipalCredentialResponse"]] ],
       { :request_style =>  :document, :request_use =>  :literal,
         :response_style => :document, :response_use => :literal,
-        :faults => {"RemoteException_"=>{:use=>"literal", :ns=>"urn:SecurityServer", :namespace=>nil, :name=>"RemoteException", :encodingstyle=>"document"}, "InvalidAuthorizationTokenException_"=>{:use=>"literal", :ns=>"urn:SecurityServer", :namespace=>nil, :name=>"InvalidAuthorizationTokenException", :encodingstyle=>"document"}, "ApplicationPermissionException_"=>{:use=>"literal", :ns=>"urn:SecurityServer", :namespace=>nil, :name=>"ApplicationPermissionException", :encodingstyle=>"document"}, "ObjectNotFoundException_"=>{:use=>"literal", :ns=>"urn:SecurityServer", :namespace=>nil, :name=>"ObjectNotFoundException", :encodingstyle=>"document"}, "InvalidCredentialException_"=>{:use=>"literal", :ns=>"urn:SecurityServer", :namespace=>nil, :name=>"InvalidCredentialException", :encodingstyle=>"document"}} }
+        :faults => {"RemoteException_"=>{:use=>"literal", :name=>"RemoteException", :ns=>"urn:SecurityServer", :namespace=>nil, :encodingstyle=>"document"}, "InvalidAuthorizationTokenException_"=>{:use=>"literal", :name=>"InvalidAuthorizationTokenException", :ns=>"urn:SecurityServer", :namespace=>nil, :encodingstyle=>"document"}, "ApplicationPermissionException_"=>{:use=>"literal", :name=>"ApplicationPermissionException", :ns=>"urn:SecurityServer", :namespace=>nil, :encodingstyle=>"document"}, "ObjectNotFoundException_"=>{:use=>"literal", :name=>"ObjectNotFoundException", :ns=>"urn:SecurityServer", :namespace=>nil, :encodingstyle=>"document"}, "InvalidCredentialException_"=>{:use=>"literal", :name=>"InvalidCredentialException", :ns=>"urn:SecurityServer", :namespace=>nil, :encodingstyle=>"document"}} }
     ],
     [ "",
       "getGrantedAuthorities",
@@ -52,7 +52,7 @@ class SecurityServerPortType < ::SOAP::RPC::Driver
         ["out", "parameters", ["::SOAP::SOAPElement", "urn:SecurityServer", "getGrantedAuthoritiesResponse"]] ],
       { :request_style =>  :document, :request_use =>  :literal,
         :response_style => :document, :response_use => :literal,
-        :faults => {"RemoteException_"=>{:use=>"literal", :ns=>"urn:SecurityServer", :namespace=>nil, :name=>"RemoteException", :encodingstyle=>"document"}, "InvalidAuthorizationTokenException_"=>{:use=>"literal", :ns=>"urn:SecurityServer", :namespace=>nil, :name=>"InvalidAuthorizationTokenException", :encodingstyle=>"document"}} }
+        :faults => {"RemoteException_"=>{:use=>"literal", :name=>"RemoteException", :ns=>"urn:SecurityServer", :namespace=>nil, :encodingstyle=>"document"}, "InvalidAuthorizationTokenException_"=>{:use=>"literal", :name=>"InvalidAuthorizationTokenException", :ns=>"urn:SecurityServer", :namespace=>nil, :encodingstyle=>"document"}} }
     ],
     [ "",
       "addPrincipal",
@@ -60,7 +60,7 @@ class SecurityServerPortType < ::SOAP::RPC::Driver
         ["out", "parameters", ["::SOAP::SOAPElement", "urn:SecurityServer", "addPrincipalResponse"]] ],
       { :request_style =>  :document, :request_use =>  :literal,
         :response_style => :document, :response_use => :literal,
-        :faults => {"RemoteException_"=>{:use=>"literal", :ns=>"urn:SecurityServer", :namespace=>nil, :name=>"RemoteException", :encodingstyle=>"document"}, "InvalidPrincipalException_"=>{:use=>"literal", :ns=>"urn:SecurityServer", :namespace=>nil, :name=>"InvalidPrincipalException", :encodingstyle=>"document"}, "InvalidAuthorizationTokenException_"=>{:use=>"literal", :ns=>"urn:SecurityServer", :namespace=>nil, :name=>"InvalidAuthorizationTokenException", :encodingstyle=>"document"}, "ApplicationPermissionException_"=>{:use=>"literal", :ns=>"urn:SecurityServer", :namespace=>nil, :name=>"ApplicationPermissionException", :encodingstyle=>"document"}, "InvalidCredentialException_"=>{:use=>"literal", :ns=>"urn:SecurityServer", :namespace=>nil, :name=>"InvalidCredentialException", :encodingstyle=>"document"}} }
+        :faults => {"RemoteException_"=>{:use=>"literal", :name=>"RemoteException", :ns=>"urn:SecurityServer", :namespace=>nil, :encodingstyle=>"document"}, "InvalidUserException_"=>{:use=>"literal", :name=>"InvalidUserException", :ns=>"urn:SecurityServer", :namespace=>nil, :encodingstyle=>"document"}, "InvalidAuthorizationTokenException_"=>{:use=>"literal", :name=>"InvalidAuthorizationTokenException", :ns=>"urn:SecurityServer", :namespace=>nil, :encodingstyle=>"document"}, "ApplicationPermissionException_"=>{:use=>"literal", :name=>"ApplicationPermissionException", :ns=>"urn:SecurityServer", :namespace=>nil, :encodingstyle=>"document"}, "InvalidCredentialException_"=>{:use=>"literal", :name=>"InvalidCredentialException", :ns=>"urn:SecurityServer", :namespace=>nil, :encodingstyle=>"document"}} }
     ],
     [ "",
       "addAttributeToPrincipal",
@@ -68,7 +68,7 @@ class SecurityServerPortType < ::SOAP::RPC::Driver
         ["out", "parameters", ["::SOAP::SOAPElement", "urn:SecurityServer", "addAttributeToPrincipalResponse"]] ],
       { :request_style =>  :document, :request_use =>  :literal,
         :response_style => :document, :response_use => :literal,
-        :faults => {"RemoteException_"=>{:use=>"literal", :ns=>"urn:SecurityServer", :namespace=>nil, :name=>"RemoteException", :encodingstyle=>"document"}, "InvalidAuthorizationTokenException_"=>{:use=>"literal", :ns=>"urn:SecurityServer", :namespace=>nil, :name=>"InvalidAuthorizationTokenException", :encodingstyle=>"document"}, "ApplicationPermissionException_"=>{:use=>"literal", :ns=>"urn:SecurityServer", :namespace=>nil, :name=>"ApplicationPermissionException", :encodingstyle=>"document"}, "ObjectNotFoundException_"=>{:use=>"literal", :ns=>"urn:SecurityServer", :namespace=>nil, :name=>"ObjectNotFoundException", :encodingstyle=>"document"}} }
+        :faults => {"RemoteException_"=>{:use=>"literal", :name=>"RemoteException", :ns=>"urn:SecurityServer", :namespace=>nil, :encodingstyle=>"document"}, "InvalidAuthorizationTokenException_"=>{:use=>"literal", :name=>"InvalidAuthorizationTokenException", :ns=>"urn:SecurityServer", :namespace=>nil, :encodingstyle=>"document"}, "ApplicationPermissionException_"=>{:use=>"literal", :name=>"ApplicationPermissionException", :ns=>"urn:SecurityServer", :namespace=>nil, :encodingstyle=>"document"}, "ObjectNotFoundException_"=>{:use=>"literal", :name=>"ObjectNotFoundException", :ns=>"urn:SecurityServer", :namespace=>nil, :encodingstyle=>"document"}} }
     ],
     [ "",
       "invalidatePrincipalToken",
@@ -76,7 +76,7 @@ class SecurityServerPortType < ::SOAP::RPC::Driver
         ["out", "parameters", ["::SOAP::SOAPElement", "urn:SecurityServer", "invalidatePrincipalTokenResponse"]] ],
       { :request_style =>  :document, :request_use =>  :literal,
         :response_style => :document, :response_use => :literal,
-        :faults => {"RemoteException_"=>{:use=>"literal", :ns=>"urn:SecurityServer", :namespace=>nil, :name=>"RemoteException", :encodingstyle=>"document"}, "InvalidAuthorizationTokenException_"=>{:use=>"literal", :ns=>"urn:SecurityServer", :namespace=>nil, :name=>"InvalidAuthorizationTokenException", :encodingstyle=>"document"}} }
+        :faults => {"RemoteException_"=>{:use=>"literal", :name=>"RemoteException", :ns=>"urn:SecurityServer", :namespace=>nil, :encodingstyle=>"document"}, "InvalidAuthorizationTokenException_"=>{:use=>"literal", :name=>"InvalidAuthorizationTokenException", :ns=>"urn:SecurityServer", :namespace=>nil, :encodingstyle=>"document"}} }
     ],
     [ "",
       "findAllGroupNames",
@@ -84,7 +84,7 @@ class SecurityServerPortType < ::SOAP::RPC::Driver
         ["out", "parameters", ["::SOAP::SOAPElement", "urn:SecurityServer", "findAllGroupNamesResponse"]] ],
       { :request_style =>  :document, :request_use =>  :literal,
         :response_style => :document, :response_use => :literal,
-        :faults => {"RemoteException_"=>{:use=>"literal", :ns=>"urn:SecurityServer", :namespace=>nil, :name=>"RemoteException", :encodingstyle=>"document"}, "InvalidAuthorizationTokenException_"=>{:use=>"literal", :ns=>"urn:SecurityServer", :namespace=>nil, :name=>"InvalidAuthorizationTokenException", :encodingstyle=>"document"}} }
+        :faults => {"RemoteException_"=>{:use=>"literal", :name=>"RemoteException", :ns=>"urn:SecurityServer", :namespace=>nil, :encodingstyle=>"document"}, "InvalidAuthorizationTokenException_"=>{:use=>"literal", :name=>"InvalidAuthorizationTokenException", :ns=>"urn:SecurityServer", :namespace=>nil, :encodingstyle=>"document"}} }
     ],
     [ "",
       "findRoleMemberships",
@@ -92,7 +92,7 @@ class SecurityServerPortType < ::SOAP::RPC::Driver
         ["out", "parameters", ["::SOAP::SOAPElement", "urn:SecurityServer", "findRoleMembershipsResponse"]] ],
       { :request_style =>  :document, :request_use =>  :literal,
         :response_style => :document, :response_use => :literal,
-        :faults => {"RemoteException_"=>{:use=>"literal", :ns=>"urn:SecurityServer", :namespace=>nil, :name=>"RemoteException", :encodingstyle=>"document"}, "InvalidAuthorizationTokenException_"=>{:use=>"literal", :ns=>"urn:SecurityServer", :namespace=>nil, :name=>"InvalidAuthorizationTokenException", :encodingstyle=>"document"}, "ObjectNotFoundException_"=>{:use=>"literal", :ns=>"urn:SecurityServer", :namespace=>nil, :name=>"ObjectNotFoundException", :encodingstyle=>"document"}} }
+        :faults => {"RemoteException_"=>{:use=>"literal", :name=>"RemoteException", :ns=>"urn:SecurityServer", :namespace=>nil, :encodingstyle=>"document"}, "InvalidAuthorizationTokenException_"=>{:use=>"literal", :name=>"InvalidAuthorizationTokenException", :ns=>"urn:SecurityServer", :namespace=>nil, :encodingstyle=>"document"}, "ObjectNotFoundException_"=>{:use=>"literal", :name=>"ObjectNotFoundException", :ns=>"urn:SecurityServer", :namespace=>nil, :encodingstyle=>"document"}} }
     ],
     [ "",
       "removePrincipal",
@@ -100,7 +100,7 @@ class SecurityServerPortType < ::SOAP::RPC::Driver
         ["out", "parameters", ["::SOAP::SOAPElement", "urn:SecurityServer", "removePrincipalResponse"]] ],
       { :request_style =>  :document, :request_use =>  :literal,
         :response_style => :document, :response_use => :literal,
-        :faults => {"RemoteException_"=>{:use=>"literal", :ns=>"urn:SecurityServer", :namespace=>nil, :name=>"RemoteException", :encodingstyle=>"document"}, "InvalidAuthorizationTokenException_"=>{:use=>"literal", :ns=>"urn:SecurityServer", :namespace=>nil, :name=>"InvalidAuthorizationTokenException", :encodingstyle=>"document"}, "ApplicationPermissionException_"=>{:use=>"literal", :ns=>"urn:SecurityServer", :namespace=>nil, :name=>"ApplicationPermissionException", :encodingstyle=>"document"}, "ObjectNotFoundException_"=>{:use=>"literal", :ns=>"urn:SecurityServer", :namespace=>nil, :name=>"ObjectNotFoundException", :encodingstyle=>"document"}} }
+        :faults => {"RemoteException_"=>{:use=>"literal", :name=>"RemoteException", :ns=>"urn:SecurityServer", :namespace=>nil, :encodingstyle=>"document"}, "InvalidAuthorizationTokenException_"=>{:use=>"literal", :name=>"InvalidAuthorizationTokenException", :ns=>"urn:SecurityServer", :namespace=>nil, :encodingstyle=>"document"}, "ApplicationPermissionException_"=>{:use=>"literal", :name=>"ApplicationPermissionException", :ns=>"urn:SecurityServer", :namespace=>nil, :encodingstyle=>"document"}, "ObjectNotFoundException_"=>{:use=>"literal", :name=>"ObjectNotFoundException", :ns=>"urn:SecurityServer", :namespace=>nil, :encodingstyle=>"document"}} }
     ],
     [ "",
       "isValidPrincipalToken",
@@ -108,7 +108,7 @@ class SecurityServerPortType < ::SOAP::RPC::Driver
         ["out", "parameters", ["::SOAP::SOAPElement", "urn:SecurityServer", "isValidPrincipalTokenResponse"]] ],
       { :request_style =>  :document, :request_use =>  :literal,
         :response_style => :document, :response_use => :literal,
-        :faults => {"RemoteException_"=>{:use=>"literal", :ns=>"urn:SecurityServer", :namespace=>nil, :name=>"RemoteException", :encodingstyle=>"document"}, "ApplicationAccessDeniedException_"=>{:use=>"literal", :ns=>"urn:SecurityServer", :namespace=>nil, :name=>"ApplicationAccessDeniedException", :encodingstyle=>"document"}, "InvalidAuthorizationTokenException_"=>{:use=>"literal", :ns=>"urn:SecurityServer", :namespace=>nil, :name=>"InvalidAuthorizationTokenException", :encodingstyle=>"document"}} }
+        :faults => {"RemoteException_"=>{:use=>"literal", :name=>"RemoteException", :ns=>"urn:SecurityServer", :namespace=>nil, :encodingstyle=>"document"}, "ApplicationAccessDeniedException_"=>{:use=>"literal", :name=>"ApplicationAccessDeniedException", :ns=>"urn:SecurityServer", :namespace=>nil, :encodingstyle=>"document"}, "InvalidAuthorizationTokenException_"=>{:use=>"literal", :name=>"InvalidAuthorizationTokenException", :ns=>"urn:SecurityServer", :namespace=>nil, :encodingstyle=>"document"}} }
     ],
     [ "",
       "authenticatePrincipalSimple",
@@ -116,7 +116,7 @@ class SecurityServerPortType < ::SOAP::RPC::Driver
         ["out", "parameters", ["::SOAP::SOAPElement", "urn:SecurityServer", "authenticatePrincipalSimpleResponse"]] ],
       { :request_style =>  :document, :request_use =>  :literal,
         :response_style => :document, :response_use => :literal,
-        :faults => {"RemoteException_"=>{:use=>"literal", :ns=>"urn:SecurityServer", :namespace=>nil, :name=>"RemoteException", :encodingstyle=>"document"}, "InactiveAccountException_"=>{:use=>"literal", :ns=>"urn:SecurityServer", :namespace=>nil, :name=>"InactiveAccountException", :encodingstyle=>"document"}, "InvalidAuthenticationException_"=>{:use=>"literal", :ns=>"urn:SecurityServer", :namespace=>nil, :name=>"InvalidAuthenticationException", :encodingstyle=>"document"}, "ApplicationAccessDeniedException_"=>{:use=>"literal", :ns=>"urn:SecurityServer", :namespace=>nil, :name=>"ApplicationAccessDeniedException", :encodingstyle=>"document"}, "InvalidAuthorizationTokenException_"=>{:use=>"literal", :ns=>"urn:SecurityServer", :namespace=>nil, :name=>"InvalidAuthorizationTokenException", :encodingstyle=>"document"}} }
+        :faults => {"RemoteException_"=>{:use=>"literal", :name=>"RemoteException", :ns=>"urn:SecurityServer", :namespace=>nil, :encodingstyle=>"document"}, "InactiveAccountException_"=>{:use=>"literal", :name=>"InactiveAccountException", :ns=>"urn:SecurityServer", :namespace=>nil, :encodingstyle=>"document"}, "InvalidAuthenticationException_"=>{:use=>"literal", :name=>"InvalidAuthenticationException", :ns=>"urn:SecurityServer", :namespace=>nil, :encodingstyle=>"document"}, "ApplicationAccessDeniedException_"=>{:use=>"literal", :name=>"ApplicationAccessDeniedException", :ns=>"urn:SecurityServer", :namespace=>nil, :encodingstyle=>"document"}, "ExpiredCredentialException_"=>{:use=>"literal", :name=>"ExpiredCredentialException", :ns=>"urn:SecurityServer", :namespace=>nil, :encodingstyle=>"document"}, "InvalidAuthorizationTokenException_"=>{:use=>"literal", :name=>"InvalidAuthorizationTokenException", :ns=>"urn:SecurityServer", :namespace=>nil, :encodingstyle=>"document"}} }
     ],
     [ "",
       "removeRole",
@@ -124,7 +124,7 @@ class SecurityServerPortType < ::SOAP::RPC::Driver
         ["out", "parameters", ["::SOAP::SOAPElement", "urn:SecurityServer", "removeRoleResponse"]] ],
       { :request_style =>  :document, :request_use =>  :literal,
         :response_style => :document, :response_use => :literal,
-        :faults => {"RemoteException_"=>{:use=>"literal", :ns=>"urn:SecurityServer", :namespace=>nil, :name=>"RemoteException", :encodingstyle=>"document"}, "InvalidAuthorizationTokenException_"=>{:use=>"literal", :ns=>"urn:SecurityServer", :namespace=>nil, :name=>"InvalidAuthorizationTokenException", :encodingstyle=>"document"}, "ApplicationPermissionException_"=>{:use=>"literal", :ns=>"urn:SecurityServer", :namespace=>nil, :name=>"ApplicationPermissionException", :encodingstyle=>"document"}, "ObjectNotFoundException_"=>{:use=>"literal", :ns=>"urn:SecurityServer", :namespace=>nil, :name=>"ObjectNotFoundException", :encodingstyle=>"document"}} }
+        :faults => {"RemoteException_"=>{:use=>"literal", :name=>"RemoteException", :ns=>"urn:SecurityServer", :namespace=>nil, :encodingstyle=>"document"}, "InvalidAuthorizationTokenException_"=>{:use=>"literal", :name=>"InvalidAuthorizationTokenException", :ns=>"urn:SecurityServer", :namespace=>nil, :encodingstyle=>"document"}, "ApplicationPermissionException_"=>{:use=>"literal", :name=>"ApplicationPermissionException", :ns=>"urn:SecurityServer", :namespace=>nil, :encodingstyle=>"document"}, "ObjectNotFoundException_"=>{:use=>"literal", :name=>"ObjectNotFoundException", :ns=>"urn:SecurityServer", :namespace=>nil, :encodingstyle=>"document"}} }
     ],
     [ "",
       "getCookieInfo",
@@ -132,7 +132,7 @@ class SecurityServerPortType < ::SOAP::RPC::Driver
         ["out", "parameters", ["::SOAP::SOAPElement", "urn:SecurityServer", "getCookieInfoResponse"]] ],
       { :request_style =>  :document, :request_use =>  :literal,
         :response_style => :document, :response_use => :literal,
-        :faults => {"RemoteException_"=>{:use=>"literal", :ns=>"urn:SecurityServer", :namespace=>nil, :name=>"RemoteException", :encodingstyle=>"document"}, "InvalidAuthorizationTokenException_"=>{:use=>"literal", :ns=>"urn:SecurityServer", :namespace=>nil, :name=>"InvalidAuthorizationTokenException", :encodingstyle=>"document"}} }
+        :faults => {"RemoteException_"=>{:use=>"literal", :name=>"RemoteException", :ns=>"urn:SecurityServer", :namespace=>nil, :encodingstyle=>"document"}, "InvalidAuthorizationTokenException_"=>{:use=>"literal", :name=>"InvalidAuthorizationTokenException", :ns=>"urn:SecurityServer", :namespace=>nil, :encodingstyle=>"document"}} }
     ],
     [ "",
       "updatePrincipalAttribute",
@@ -140,7 +140,7 @@ class SecurityServerPortType < ::SOAP::RPC::Driver
         ["out", "parameters", ["::SOAP::SOAPElement", "urn:SecurityServer", "updatePrincipalAttributeResponse"]] ],
       { :request_style =>  :document, :request_use =>  :literal,
         :response_style => :document, :response_use => :literal,
-        :faults => {"RemoteException_"=>{:use=>"literal", :ns=>"urn:SecurityServer", :namespace=>nil, :name=>"RemoteException", :encodingstyle=>"document"}, "InvalidAuthorizationTokenException_"=>{:use=>"literal", :ns=>"urn:SecurityServer", :namespace=>nil, :name=>"InvalidAuthorizationTokenException", :encodingstyle=>"document"}, "ApplicationPermissionException_"=>{:use=>"literal", :ns=>"urn:SecurityServer", :namespace=>nil, :name=>"ApplicationPermissionException", :encodingstyle=>"document"}, "ObjectNotFoundException_"=>{:use=>"literal", :ns=>"urn:SecurityServer", :namespace=>nil, :name=>"ObjectNotFoundException", :encodingstyle=>"document"}} }
+        :faults => {"RemoteException_"=>{:use=>"literal", :name=>"RemoteException", :ns=>"urn:SecurityServer", :namespace=>nil, :encodingstyle=>"document"}, "InvalidAuthorizationTokenException_"=>{:use=>"literal", :name=>"InvalidAuthorizationTokenException", :ns=>"urn:SecurityServer", :namespace=>nil, :encodingstyle=>"document"}, "ApplicationPermissionException_"=>{:use=>"literal", :name=>"ApplicationPermissionException", :ns=>"urn:SecurityServer", :namespace=>nil, :encodingstyle=>"document"}, "ObjectNotFoundException_"=>{:use=>"literal", :name=>"ObjectNotFoundException", :ns=>"urn:SecurityServer", :namespace=>nil, :encodingstyle=>"document"}} }
     ],
     [ "",
       "searchGroups",
@@ -148,7 +148,7 @@ class SecurityServerPortType < ::SOAP::RPC::Driver
         ["out", "parameters", ["::SOAP::SOAPElement", "urn:SecurityServer", "searchGroupsResponse"]] ],
       { :request_style =>  :document, :request_use =>  :literal,
         :response_style => :document, :response_use => :literal,
-        :faults => {"RemoteException_"=>{:use=>"literal", :ns=>"urn:SecurityServer", :namespace=>nil, :name=>"RemoteException", :encodingstyle=>"document"}, "InvalidAuthorizationTokenException_"=>{:use=>"literal", :ns=>"urn:SecurityServer", :namespace=>nil, :name=>"InvalidAuthorizationTokenException", :encodingstyle=>"document"}} }
+        :faults => {"RemoteException_"=>{:use=>"literal", :name=>"RemoteException", :ns=>"urn:SecurityServer", :namespace=>nil, :encodingstyle=>"document"}, "InvalidAuthorizationTokenException_"=>{:use=>"literal", :name=>"InvalidAuthorizationTokenException", :ns=>"urn:SecurityServer", :namespace=>nil, :encodingstyle=>"document"}} }
     ],
     [ "",
       "getCacheTime",
@@ -156,7 +156,7 @@ class SecurityServerPortType < ::SOAP::RPC::Driver
         ["out", "parameters", ["::SOAP::SOAPElement", "urn:SecurityServer", "getCacheTimeResponse"]] ],
       { :request_style =>  :document, :request_use =>  :literal,
         :response_style => :document, :response_use => :literal,
-        :faults => {"RemoteException_"=>{:use=>"literal", :ns=>"urn:SecurityServer", :namespace=>nil, :name=>"RemoteException", :encodingstyle=>"document"}, "InvalidAuthorizationTokenException_"=>{:use=>"literal", :ns=>"urn:SecurityServer", :namespace=>nil, :name=>"InvalidAuthorizationTokenException", :encodingstyle=>"document"}} }
+        :faults => {"RemoteException_"=>{:use=>"literal", :name=>"RemoteException", :ns=>"urn:SecurityServer", :namespace=>nil, :encodingstyle=>"document"}, "InvalidAuthorizationTokenException_"=>{:use=>"literal", :name=>"InvalidAuthorizationTokenException", :ns=>"urn:SecurityServer", :namespace=>nil, :encodingstyle=>"document"}} }
     ],
     [ "",
       "isRoleMember",
@@ -164,7 +164,7 @@ class SecurityServerPortType < ::SOAP::RPC::Driver
         ["out", "parameters", ["::SOAP::SOAPElement", "urn:SecurityServer", "isRoleMemberResponse"]] ],
       { :request_style =>  :document, :request_use =>  :literal,
         :response_style => :document, :response_use => :literal,
-        :faults => {"RemoteException_"=>{:use=>"literal", :ns=>"urn:SecurityServer", :namespace=>nil, :name=>"RemoteException", :encodingstyle=>"document"}, "InvalidAuthorizationTokenException_"=>{:use=>"literal", :ns=>"urn:SecurityServer", :namespace=>nil, :name=>"InvalidAuthorizationTokenException", :encodingstyle=>"document"}} }
+        :faults => {"RemoteException_"=>{:use=>"literal", :name=>"RemoteException", :ns=>"urn:SecurityServer", :namespace=>nil, :encodingstyle=>"document"}, "InvalidAuthorizationTokenException_"=>{:use=>"literal", :name=>"InvalidAuthorizationTokenException", :ns=>"urn:SecurityServer", :namespace=>nil, :encodingstyle=>"document"}} }
     ],
     [ "",
       "updateGroup",
@@ -172,7 +172,15 @@ class SecurityServerPortType < ::SOAP::RPC::Driver
         ["out", "parameters", ["::SOAP::SOAPElement", "urn:SecurityServer", "updateGroupResponse"]] ],
       { :request_style =>  :document, :request_use =>  :literal,
         :response_style => :document, :response_use => :literal,
-        :faults => {"RemoteException_"=>{:use=>"literal", :ns=>"urn:SecurityServer", :namespace=>nil, :name=>"RemoteException", :encodingstyle=>"document"}, "InvalidAuthorizationTokenException_"=>{:use=>"literal", :ns=>"urn:SecurityServer", :namespace=>nil, :name=>"InvalidAuthorizationTokenException", :encodingstyle=>"document"}, "ApplicationPermissionException_"=>{:use=>"literal", :ns=>"urn:SecurityServer", :namespace=>nil, :name=>"ApplicationPermissionException", :encodingstyle=>"document"}, "ObjectNotFoundException_"=>{:use=>"literal", :ns=>"urn:SecurityServer", :namespace=>nil, :name=>"ObjectNotFoundException", :encodingstyle=>"document"}} }
+        :faults => {"RemoteException_"=>{:use=>"literal", :name=>"RemoteException", :ns=>"urn:SecurityServer", :namespace=>nil, :encodingstyle=>"document"}, "InvalidAuthorizationTokenException_"=>{:use=>"literal", :name=>"InvalidAuthorizationTokenException", :ns=>"urn:SecurityServer", :namespace=>nil, :encodingstyle=>"document"}, "ApplicationPermissionException_"=>{:use=>"literal", :name=>"ApplicationPermissionException", :ns=>"urn:SecurityServer", :namespace=>nil, :encodingstyle=>"document"}, "ObjectNotFoundException_"=>{:use=>"literal", :name=>"ObjectNotFoundException", :ns=>"urn:SecurityServer", :namespace=>nil, :encodingstyle=>"document"}} }
+    ],
+    [ "",
+      "addAttributeToGroup",
+      [ ["in", "parameters", ["::SOAP::SOAPElement", "urn:SecurityServer", "addAttributeToGroup"]],
+        ["out", "parameters", ["::SOAP::SOAPElement", "urn:SecurityServer", "addAttributeToGroupResponse"]] ],
+      { :request_style =>  :document, :request_use =>  :literal,
+        :response_style => :document, :response_use => :literal,
+        :faults => {"RemoteException_"=>{:use=>"literal", :name=>"RemoteException", :ns=>"urn:SecurityServer", :namespace=>nil, :encodingstyle=>"document"}, "InvalidAuthorizationTokenException_"=>{:use=>"literal", :name=>"InvalidAuthorizationTokenException", :ns=>"urn:SecurityServer", :namespace=>nil, :encodingstyle=>"document"}, "ApplicationPermissionException_"=>{:use=>"literal", :name=>"ApplicationPermissionException", :ns=>"urn:SecurityServer", :namespace=>nil, :encodingstyle=>"document"}, "ObjectNotFoundException_"=>{:use=>"literal", :name=>"ObjectNotFoundException", :ns=>"urn:SecurityServer", :namespace=>nil, :encodingstyle=>"document"}} }
     ],
     [ "",
       "findAllRoleNames",
@@ -180,7 +188,7 @@ class SecurityServerPortType < ::SOAP::RPC::Driver
         ["out", "parameters", ["::SOAP::SOAPElement", "urn:SecurityServer", "findAllRoleNamesResponse"]] ],
       { :request_style =>  :document, :request_use =>  :literal,
         :response_style => :document, :response_use => :literal,
-        :faults => {"RemoteException_"=>{:use=>"literal", :ns=>"urn:SecurityServer", :namespace=>nil, :name=>"RemoteException", :encodingstyle=>"document"}, "InvalidAuthorizationTokenException_"=>{:use=>"literal", :ns=>"urn:SecurityServer", :namespace=>nil, :name=>"InvalidAuthorizationTokenException", :encodingstyle=>"document"}} }
+        :faults => {"RemoteException_"=>{:use=>"literal", :name=>"RemoteException", :ns=>"urn:SecurityServer", :namespace=>nil, :encodingstyle=>"document"}, "InvalidAuthorizationTokenException_"=>{:use=>"literal", :name=>"InvalidAuthorizationTokenException", :ns=>"urn:SecurityServer", :namespace=>nil, :encodingstyle=>"document"}} }
     ],
     [ "",
       "findRoleByName",
@@ -188,7 +196,7 @@ class SecurityServerPortType < ::SOAP::RPC::Driver
         ["out", "parameters", ["::SOAP::SOAPElement", "urn:SecurityServer", "findRoleByNameResponse"]] ],
       { :request_style =>  :document, :request_use =>  :literal,
         :response_style => :document, :response_use => :literal,
-        :faults => {"RemoteException_"=>{:use=>"literal", :ns=>"urn:SecurityServer", :namespace=>nil, :name=>"RemoteException", :encodingstyle=>"document"}, "InvalidAuthorizationTokenException_"=>{:use=>"literal", :ns=>"urn:SecurityServer", :namespace=>nil, :name=>"InvalidAuthorizationTokenException", :encodingstyle=>"document"}, "ObjectNotFoundException_"=>{:use=>"literal", :ns=>"urn:SecurityServer", :namespace=>nil, :name=>"ObjectNotFoundException", :encodingstyle=>"document"}} }
+        :faults => {"RemoteException_"=>{:use=>"literal", :name=>"RemoteException", :ns=>"urn:SecurityServer", :namespace=>nil, :encodingstyle=>"document"}, "InvalidAuthorizationTokenException_"=>{:use=>"literal", :name=>"InvalidAuthorizationTokenException", :ns=>"urn:SecurityServer", :namespace=>nil, :encodingstyle=>"document"}, "ObjectNotFoundException_"=>{:use=>"literal", :name=>"ObjectNotFoundException", :ns=>"urn:SecurityServer", :namespace=>nil, :encodingstyle=>"document"}} }
     ],
     [ "",
       "isCacheEnabled",
@@ -196,7 +204,7 @@ class SecurityServerPortType < ::SOAP::RPC::Driver
         ["out", "parameters", ["::SOAP::SOAPElement", "urn:SecurityServer", "isCacheEnabledResponse"]] ],
       { :request_style =>  :document, :request_use =>  :literal,
         :response_style => :document, :response_use => :literal,
-        :faults => {"RemoteException_"=>{:use=>"literal", :ns=>"urn:SecurityServer", :namespace=>nil, :name=>"RemoteException", :encodingstyle=>"document"}, "InvalidAuthorizationTokenException_"=>{:use=>"literal", :ns=>"urn:SecurityServer", :namespace=>nil, :name=>"InvalidAuthorizationTokenException", :encodingstyle=>"document"}} }
+        :faults => {"RemoteException_"=>{:use=>"literal", :name=>"RemoteException", :ns=>"urn:SecurityServer", :namespace=>nil, :encodingstyle=>"document"}, "InvalidAuthorizationTokenException_"=>{:use=>"literal", :name=>"InvalidAuthorizationTokenException", :ns=>"urn:SecurityServer", :namespace=>nil, :encodingstyle=>"document"}} }
     ],
     [ "",
       "findGroupByName",
@@ -204,7 +212,15 @@ class SecurityServerPortType < ::SOAP::RPC::Driver
         ["out", "parameters", ["::SOAP::SOAPElement", "urn:SecurityServer", "findGroupByNameResponse"]] ],
       { :request_style =>  :document, :request_use =>  :literal,
         :response_style => :document, :response_use => :literal,
-        :faults => {"RemoteException_"=>{:use=>"literal", :ns=>"urn:SecurityServer", :namespace=>nil, :name=>"RemoteException", :encodingstyle=>"document"}, "InvalidAuthorizationTokenException_"=>{:use=>"literal", :ns=>"urn:SecurityServer", :namespace=>nil, :name=>"InvalidAuthorizationTokenException", :encodingstyle=>"document"}, "ObjectNotFoundException_"=>{:use=>"literal", :ns=>"urn:SecurityServer", :namespace=>nil, :name=>"ObjectNotFoundException", :encodingstyle=>"document"}} }
+        :faults => {"RemoteException_"=>{:use=>"literal", :name=>"RemoteException", :ns=>"urn:SecurityServer", :namespace=>nil, :encodingstyle=>"document"}, "InvalidAuthorizationTokenException_"=>{:use=>"literal", :name=>"InvalidAuthorizationTokenException", :ns=>"urn:SecurityServer", :namespace=>nil, :encodingstyle=>"document"}, "ObjectNotFoundException_"=>{:use=>"literal", :name=>"ObjectNotFoundException", :ns=>"urn:SecurityServer", :namespace=>nil, :encodingstyle=>"document"}} }
+    ],
+    [ "",
+      "findGroupWithAttributesByName",
+      [ ["in", "parameters", ["::SOAP::SOAPElement", "urn:SecurityServer", "findGroupWithAttributesByName"]],
+        ["out", "parameters", ["::SOAP::SOAPElement", "urn:SecurityServer", "findGroupWithAttributesByNameResponse"]] ],
+      { :request_style =>  :document, :request_use =>  :literal,
+        :response_style => :document, :response_use => :literal,
+        :faults => {"RemoteException_"=>{:use=>"literal", :name=>"RemoteException", :ns=>"urn:SecurityServer", :namespace=>nil, :encodingstyle=>"document"}, "InvalidAuthorizationTokenException_"=>{:use=>"literal", :name=>"InvalidAuthorizationTokenException", :ns=>"urn:SecurityServer", :namespace=>nil, :encodingstyle=>"document"}, "ObjectNotFoundException_"=>{:use=>"literal", :name=>"ObjectNotFoundException", :ns=>"urn:SecurityServer", :namespace=>nil, :encodingstyle=>"document"}} }
     ],
     [ "",
       "removePrincipalFromRole",
@@ -212,7 +228,15 @@ class SecurityServerPortType < ::SOAP::RPC::Driver
         ["out", "parameters", ["::SOAP::SOAPElement", "urn:SecurityServer", "removePrincipalFromRoleResponse"]] ],
       { :request_style =>  :document, :request_use =>  :literal,
         :response_style => :document, :response_use => :literal,
-        :faults => {"RemoteException_"=>{:use=>"literal", :ns=>"urn:SecurityServer", :namespace=>nil, :name=>"RemoteException", :encodingstyle=>"document"}, "InvalidAuthorizationTokenException_"=>{:use=>"literal", :ns=>"urn:SecurityServer", :namespace=>nil, :name=>"InvalidAuthorizationTokenException", :encodingstyle=>"document"}, "ApplicationPermissionException_"=>{:use=>"literal", :ns=>"urn:SecurityServer", :namespace=>nil, :name=>"ApplicationPermissionException", :encodingstyle=>"document"}, "ObjectNotFoundException_"=>{:use=>"literal", :ns=>"urn:SecurityServer", :namespace=>nil, :name=>"ObjectNotFoundException", :encodingstyle=>"document"}} }
+        :faults => {"RemoteException_"=>{:use=>"literal", :name=>"RemoteException", :ns=>"urn:SecurityServer", :namespace=>nil, :encodingstyle=>"document"}, "InvalidAuthorizationTokenException_"=>{:use=>"literal", :name=>"InvalidAuthorizationTokenException", :ns=>"urn:SecurityServer", :namespace=>nil, :encodingstyle=>"document"}, "ApplicationPermissionException_"=>{:use=>"literal", :name=>"ApplicationPermissionException", :ns=>"urn:SecurityServer", :namespace=>nil, :encodingstyle=>"document"}, "ObjectNotFoundException_"=>{:use=>"literal", :name=>"ObjectNotFoundException", :ns=>"urn:SecurityServer", :namespace=>nil, :encodingstyle=>"document"}} }
+    ],
+    [ "",
+      "findPrincipalWithAttributesByName",
+      [ ["in", "parameters", ["::SOAP::SOAPElement", "urn:SecurityServer", "findPrincipalWithAttributesByName"]],
+        ["out", "parameters", ["::SOAP::SOAPElement", "urn:SecurityServer", "findPrincipalWithAttributesByNameResponse"]] ],
+      { :request_style =>  :document, :request_use =>  :literal,
+        :response_style => :document, :response_use => :literal,
+        :faults => {"RemoteException_"=>{:use=>"literal", :name=>"RemoteException", :ns=>"urn:SecurityServer", :namespace=>nil, :encodingstyle=>"document"}, "InvalidAuthorizationTokenException_"=>{:use=>"literal", :name=>"InvalidAuthorizationTokenException", :ns=>"urn:SecurityServer", :namespace=>nil, :encodingstyle=>"document"}, "ObjectNotFoundException_"=>{:use=>"literal", :name=>"ObjectNotFoundException", :ns=>"urn:SecurityServer", :namespace=>nil, :encodingstyle=>"document"}} }
     ],
     [ "",
       "authenticatePrincipal",
@@ -220,7 +244,7 @@ class SecurityServerPortType < ::SOAP::RPC::Driver
         ["out", "parameters", ["::SOAP::SOAPElement", "urn:SecurityServer", "authenticatePrincipalResponse"]] ],
       { :request_style =>  :document, :request_use =>  :literal,
         :response_style => :document, :response_use => :literal,
-        :faults => {"RemoteException_"=>{:use=>"literal", :ns=>"urn:SecurityServer", :namespace=>nil, :name=>"RemoteException", :encodingstyle=>"document"}, "InactiveAccountException_"=>{:use=>"literal", :ns=>"urn:SecurityServer", :namespace=>nil, :name=>"InactiveAccountException", :encodingstyle=>"document"}, "InvalidAuthenticationException_"=>{:use=>"literal", :ns=>"urn:SecurityServer", :namespace=>nil, :name=>"InvalidAuthenticationException", :encodingstyle=>"document"}, "ApplicationAccessDeniedException_"=>{:use=>"literal", :ns=>"urn:SecurityServer", :namespace=>nil, :name=>"ApplicationAccessDeniedException", :encodingstyle=>"document"}, "InvalidAuthorizationTokenException_"=>{:use=>"literal", :ns=>"urn:SecurityServer", :namespace=>nil, :name=>"InvalidAuthorizationTokenException", :encodingstyle=>"document"}} }
+        :faults => {"RemoteException_"=>{:use=>"literal", :name=>"RemoteException", :ns=>"urn:SecurityServer", :namespace=>nil, :encodingstyle=>"document"}, "InactiveAccountException_"=>{:use=>"literal", :name=>"InactiveAccountException", :ns=>"urn:SecurityServer", :namespace=>nil, :encodingstyle=>"document"}, "InvalidAuthenticationException_"=>{:use=>"literal", :name=>"InvalidAuthenticationException", :ns=>"urn:SecurityServer", :namespace=>nil, :encodingstyle=>"document"}, "ApplicationAccessDeniedException_"=>{:use=>"literal", :name=>"ApplicationAccessDeniedException", :ns=>"urn:SecurityServer", :namespace=>nil, :encodingstyle=>"document"}, "ExpiredCredentialException_"=>{:use=>"literal", :name=>"ExpiredCredentialException", :ns=>"urn:SecurityServer", :namespace=>nil, :encodingstyle=>"document"}, "InvalidAuthorizationTokenException_"=>{:use=>"literal", :name=>"InvalidAuthorizationTokenException", :ns=>"urn:SecurityServer", :namespace=>nil, :encodingstyle=>"document"}} }
     ],
     [ "",
       "findGroupMemberships",
@@ -228,7 +252,7 @@ class SecurityServerPortType < ::SOAP::RPC::Driver
         ["out", "parameters", ["::SOAP::SOAPElement", "urn:SecurityServer", "findGroupMembershipsResponse"]] ],
       { :request_style =>  :document, :request_use =>  :literal,
         :response_style => :document, :response_use => :literal,
-        :faults => {"RemoteException_"=>{:use=>"literal", :ns=>"urn:SecurityServer", :namespace=>nil, :name=>"RemoteException", :encodingstyle=>"document"}, "InvalidAuthorizationTokenException_"=>{:use=>"literal", :ns=>"urn:SecurityServer", :namespace=>nil, :name=>"InvalidAuthorizationTokenException", :encodingstyle=>"document"}, "ObjectNotFoundException_"=>{:use=>"literal", :ns=>"urn:SecurityServer", :namespace=>nil, :name=>"ObjectNotFoundException", :encodingstyle=>"document"}} }
+        :faults => {"RemoteException_"=>{:use=>"literal", :name=>"RemoteException", :ns=>"urn:SecurityServer", :namespace=>nil, :encodingstyle=>"document"}, "InvalidAuthorizationTokenException_"=>{:use=>"literal", :name=>"InvalidAuthorizationTokenException", :ns=>"urn:SecurityServer", :namespace=>nil, :encodingstyle=>"document"}, "ObjectNotFoundException_"=>{:use=>"literal", :name=>"ObjectNotFoundException", :ns=>"urn:SecurityServer", :namespace=>nil, :encodingstyle=>"document"}} }
     ],
     [ "",
       "addPrincipalToGroup",
@@ -236,7 +260,7 @@ class SecurityServerPortType < ::SOAP::RPC::Driver
         ["out", "parameters", ["::SOAP::SOAPElement", "urn:SecurityServer", "addPrincipalToGroupResponse"]] ],
       { :request_style =>  :document, :request_use =>  :literal,
         :response_style => :document, :response_use => :literal,
-        :faults => {"RemoteException_"=>{:use=>"literal", :ns=>"urn:SecurityServer", :namespace=>nil, :name=>"RemoteException", :encodingstyle=>"document"}, "InvalidAuthorizationTokenException_"=>{:use=>"literal", :ns=>"urn:SecurityServer", :namespace=>nil, :name=>"InvalidAuthorizationTokenException", :encodingstyle=>"document"}, "ApplicationPermissionException_"=>{:use=>"literal", :ns=>"urn:SecurityServer", :namespace=>nil, :name=>"ApplicationPermissionException", :encodingstyle=>"document"}, "ObjectNotFoundException_"=>{:use=>"literal", :ns=>"urn:SecurityServer", :namespace=>nil, :name=>"ObjectNotFoundException", :encodingstyle=>"document"}} }
+        :faults => {"RemoteException_"=>{:use=>"literal", :name=>"RemoteException", :ns=>"urn:SecurityServer", :namespace=>nil, :encodingstyle=>"document"}, "InvalidAuthorizationTokenException_"=>{:use=>"literal", :name=>"InvalidAuthorizationTokenException", :ns=>"urn:SecurityServer", :namespace=>nil, :encodingstyle=>"document"}, "ApplicationPermissionException_"=>{:use=>"literal", :name=>"ApplicationPermissionException", :ns=>"urn:SecurityServer", :namespace=>nil, :encodingstyle=>"document"}, "ObjectNotFoundException_"=>{:use=>"literal", :name=>"ObjectNotFoundException", :ns=>"urn:SecurityServer", :namespace=>nil, :encodingstyle=>"document"}} }
     ],
     [ "",
       "removeGroup",
@@ -244,7 +268,23 @@ class SecurityServerPortType < ::SOAP::RPC::Driver
         ["out", "parameters", ["::SOAP::SOAPElement", "urn:SecurityServer", "removeGroupResponse"]] ],
       { :request_style =>  :document, :request_use =>  :literal,
         :response_style => :document, :response_use => :literal,
-        :faults => {"RemoteException_"=>{:use=>"literal", :ns=>"urn:SecurityServer", :namespace=>nil, :name=>"RemoteException", :encodingstyle=>"document"}, "InvalidAuthorizationTokenException_"=>{:use=>"literal", :ns=>"urn:SecurityServer", :namespace=>nil, :name=>"InvalidAuthorizationTokenException", :encodingstyle=>"document"}, "ApplicationPermissionException_"=>{:use=>"literal", :ns=>"urn:SecurityServer", :namespace=>nil, :name=>"ApplicationPermissionException", :encodingstyle=>"document"}, "ObjectNotFoundException_"=>{:use=>"literal", :ns=>"urn:SecurityServer", :namespace=>nil, :name=>"ObjectNotFoundException", :encodingstyle=>"document"}} }
+        :faults => {"RemoteException_"=>{:use=>"literal", :name=>"RemoteException", :ns=>"urn:SecurityServer", :namespace=>nil, :encodingstyle=>"document"}, "InvalidAuthorizationTokenException_"=>{:use=>"literal", :name=>"InvalidAuthorizationTokenException", :ns=>"urn:SecurityServer", :namespace=>nil, :encodingstyle=>"document"}, "ApplicationPermissionException_"=>{:use=>"literal", :name=>"ApplicationPermissionException", :ns=>"urn:SecurityServer", :namespace=>nil, :encodingstyle=>"document"}, "ObjectNotFoundException_"=>{:use=>"literal", :name=>"ObjectNotFoundException", :ns=>"urn:SecurityServer", :namespace=>nil, :encodingstyle=>"document"}} }
+    ],
+    [ "",
+      "removeAttributeFromGroup",
+      [ ["in", "parameters", ["::SOAP::SOAPElement", "urn:SecurityServer", "removeAttributeFromGroup"]],
+        ["out", "parameters", ["::SOAP::SOAPElement", "urn:SecurityServer", "removeAttributeFromGroupResponse"]] ],
+      { :request_style =>  :document, :request_use =>  :literal,
+        :response_style => :document, :response_use => :literal,
+        :faults => {"RemoteException_"=>{:use=>"literal", :name=>"RemoteException", :ns=>"urn:SecurityServer", :namespace=>nil, :encodingstyle=>"document"}, "InvalidAuthorizationTokenException_"=>{:use=>"literal", :name=>"InvalidAuthorizationTokenException", :ns=>"urn:SecurityServer", :namespace=>nil, :encodingstyle=>"document"}, "ApplicationPermissionException_"=>{:use=>"literal", :name=>"ApplicationPermissionException", :ns=>"urn:SecurityServer", :namespace=>nil, :encodingstyle=>"document"}, "ObjectNotFoundException_"=>{:use=>"literal", :name=>"ObjectNotFoundException", :ns=>"urn:SecurityServer", :namespace=>nil, :encodingstyle=>"document"}} }
+    ],
+    [ "",
+      "addAllPrincipals",
+      [ ["in", "parameters", ["::SOAP::SOAPElement", "urn:SecurityServer", "addAllPrincipals"]],
+        ["out", "parameters", ["::SOAP::SOAPElement", "urn:SecurityServer", "addAllPrincipalsResponse"]] ],
+      { :request_style =>  :document, :request_use =>  :literal,
+        :response_style => :document, :response_use => :literal,
+        :faults => {"RemoteException_"=>{:use=>"literal", :name=>"RemoteException", :ns=>"urn:SecurityServer", :namespace=>nil, :encodingstyle=>"document"}, "InvalidAuthorizationTokenException_"=>{:use=>"literal", :name=>"InvalidAuthorizationTokenException", :ns=>"urn:SecurityServer", :namespace=>nil, :encodingstyle=>"document"}, "ApplicationPermissionException_"=>{:use=>"literal", :name=>"ApplicationPermissionException", :ns=>"urn:SecurityServer", :namespace=>nil, :encodingstyle=>"document"}, "BulkAddFailedException_"=>{:use=>"literal", :name=>"BulkAddFailedException", :ns=>"urn:SecurityServer", :namespace=>nil, :encodingstyle=>"document"}} }
     ],
     [ "",
       "removeAttributeFromPrincipal",
@@ -252,15 +292,7 @@ class SecurityServerPortType < ::SOAP::RPC::Driver
         ["out", "parameters", ["::SOAP::SOAPElement", "urn:SecurityServer", "removeAttributeFromPrincipalResponse"]] ],
       { :request_style =>  :document, :request_use =>  :literal,
         :response_style => :document, :response_use => :literal,
-        :faults => {"RemoteException_"=>{:use=>"literal", :ns=>"urn:SecurityServer", :namespace=>nil, :name=>"RemoteException", :encodingstyle=>"document"}, "InvalidAuthorizationTokenException_"=>{:use=>"literal", :ns=>"urn:SecurityServer", :namespace=>nil, :name=>"InvalidAuthorizationTokenException", :encodingstyle=>"document"}, "ApplicationPermissionException_"=>{:use=>"literal", :ns=>"urn:SecurityServer", :namespace=>nil, :name=>"ApplicationPermissionException", :encodingstyle=>"document"}, "ObjectNotFoundException_"=>{:use=>"literal", :ns=>"urn:SecurityServer", :namespace=>nil, :name=>"ObjectNotFoundException", :encodingstyle=>"document"}} }
-    ],
-    [ "",
-      "findAllPrincipalNames",
-      [ ["in", "parameters", ["::SOAP::SOAPElement", "urn:SecurityServer", "findAllPrincipalNames"]],
-        ["out", "parameters", ["::SOAP::SOAPElement", "urn:SecurityServer", "findAllPrincipalNamesResponse"]] ],
-      { :request_style =>  :document, :request_use =>  :literal,
-        :response_style => :document, :response_use => :literal,
-        :faults => {"RemoteException_"=>{:use=>"literal", :ns=>"urn:SecurityServer", :namespace=>nil, :name=>"RemoteException", :encodingstyle=>"document"}, "InvalidAuthorizationTokenException_"=>{:use=>"literal", :ns=>"urn:SecurityServer", :namespace=>nil, :name=>"InvalidAuthorizationTokenException", :encodingstyle=>"document"}} }
+        :faults => {"RemoteException_"=>{:use=>"literal", :name=>"RemoteException", :ns=>"urn:SecurityServer", :namespace=>nil, :encodingstyle=>"document"}, "InvalidAuthorizationTokenException_"=>{:use=>"literal", :name=>"InvalidAuthorizationTokenException", :ns=>"urn:SecurityServer", :namespace=>nil, :encodingstyle=>"document"}, "ApplicationPermissionException_"=>{:use=>"literal", :name=>"ApplicationPermissionException", :ns=>"urn:SecurityServer", :namespace=>nil, :encodingstyle=>"document"}, "ObjectNotFoundException_"=>{:use=>"literal", :name=>"ObjectNotFoundException", :ns=>"urn:SecurityServer", :namespace=>nil, :encodingstyle=>"document"}} }
     ],
     [ "",
       "addRole",
@@ -268,7 +300,15 @@ class SecurityServerPortType < ::SOAP::RPC::Driver
         ["out", "parameters", ["::SOAP::SOAPElement", "urn:SecurityServer", "addRoleResponse"]] ],
       { :request_style =>  :document, :request_use =>  :literal,
         :response_style => :document, :response_use => :literal,
-        :faults => {"RemoteException_"=>{:use=>"literal", :ns=>"urn:SecurityServer", :namespace=>nil, :name=>"RemoteException", :encodingstyle=>"document"}, "InvalidAuthorizationTokenException_"=>{:use=>"literal", :ns=>"urn:SecurityServer", :namespace=>nil, :name=>"InvalidAuthorizationTokenException", :encodingstyle=>"document"}, "InvalidRoleException_"=>{:use=>"literal", :ns=>"urn:SecurityServer", :namespace=>nil, :name=>"InvalidRoleException", :encodingstyle=>"document"}, "ApplicationPermissionException_"=>{:use=>"literal", :ns=>"urn:SecurityServer", :namespace=>nil, :name=>"ApplicationPermissionException", :encodingstyle=>"document"}} }
+        :faults => {"RemoteException_"=>{:use=>"literal", :name=>"RemoteException", :ns=>"urn:SecurityServer", :namespace=>nil, :encodingstyle=>"document"}, "InvalidAuthorizationTokenException_"=>{:use=>"literal", :name=>"InvalidAuthorizationTokenException", :ns=>"urn:SecurityServer", :namespace=>nil, :encodingstyle=>"document"}, "InvalidRoleException_"=>{:use=>"literal", :name=>"InvalidRoleException", :ns=>"urn:SecurityServer", :namespace=>nil, :encodingstyle=>"document"}, "ApplicationPermissionException_"=>{:use=>"literal", :name=>"ApplicationPermissionException", :ns=>"urn:SecurityServer", :namespace=>nil, :encodingstyle=>"document"}} }
+    ],
+    [ "",
+      "findAllPrincipalNames",
+      [ ["in", "parameters", ["::SOAP::SOAPElement", "urn:SecurityServer", "findAllPrincipalNames"]],
+        ["out", "parameters", ["::SOAP::SOAPElement", "urn:SecurityServer", "findAllPrincipalNamesResponse"]] ],
+      { :request_style =>  :document, :request_use =>  :literal,
+        :response_style => :document, :response_use => :literal,
+        :faults => {"RemoteException_"=>{:use=>"literal", :name=>"RemoteException", :ns=>"urn:SecurityServer", :namespace=>nil, :encodingstyle=>"document"}, "InvalidAuthorizationTokenException_"=>{:use=>"literal", :name=>"InvalidAuthorizationTokenException", :ns=>"urn:SecurityServer", :namespace=>nil, :encodingstyle=>"document"}} }
     ],
     [ "",
       "createPrincipalToken",
@@ -276,7 +316,7 @@ class SecurityServerPortType < ::SOAP::RPC::Driver
         ["out", "parameters", ["::SOAP::SOAPElement", "urn:SecurityServer", "createPrincipalTokenResponse"]] ],
       { :request_style =>  :document, :request_use =>  :literal,
         :response_style => :document, :response_use => :literal,
-        :faults => {"RemoteException_"=>{:use=>"literal", :ns=>"urn:SecurityServer", :namespace=>nil, :name=>"RemoteException", :encodingstyle=>"document"}, "InactiveAccountException_"=>{:use=>"literal", :ns=>"urn:SecurityServer", :namespace=>nil, :name=>"InactiveAccountException", :encodingstyle=>"document"}, "InvalidAuthenticationException_"=>{:use=>"literal", :ns=>"urn:SecurityServer", :namespace=>nil, :name=>"InvalidAuthenticationException", :encodingstyle=>"document"}, "ApplicationAccessDeniedException_"=>{:use=>"literal", :ns=>"urn:SecurityServer", :namespace=>nil, :name=>"ApplicationAccessDeniedException", :encodingstyle=>"document"}, "InvalidAuthorizationTokenException_"=>{:use=>"literal", :ns=>"urn:SecurityServer", :namespace=>nil, :name=>"InvalidAuthorizationTokenException", :encodingstyle=>"document"}} }
+        :faults => {"RemoteException_"=>{:use=>"literal", :name=>"RemoteException", :ns=>"urn:SecurityServer", :namespace=>nil, :encodingstyle=>"document"}, "InactiveAccountException_"=>{:use=>"literal", :name=>"InactiveAccountException", :ns=>"urn:SecurityServer", :namespace=>nil, :encodingstyle=>"document"}, "InvalidAuthenticationException_"=>{:use=>"literal", :name=>"InvalidAuthenticationException", :ns=>"urn:SecurityServer", :namespace=>nil, :encodingstyle=>"document"}, "ApplicationAccessDeniedException_"=>{:use=>"literal", :name=>"ApplicationAccessDeniedException", :ns=>"urn:SecurityServer", :namespace=>nil, :encodingstyle=>"document"}, "InvalidAuthorizationTokenException_"=>{:use=>"literal", :name=>"InvalidAuthorizationTokenException", :ns=>"urn:SecurityServer", :namespace=>nil, :encodingstyle=>"document"}} }
     ],
     [ "",
       "searchRoles",
@@ -284,7 +324,7 @@ class SecurityServerPortType < ::SOAP::RPC::Driver
         ["out", "parameters", ["::SOAP::SOAPElement", "urn:SecurityServer", "searchRolesResponse"]] ],
       { :request_style =>  :document, :request_use =>  :literal,
         :response_style => :document, :response_use => :literal,
-        :faults => {"RemoteException_"=>{:use=>"literal", :ns=>"urn:SecurityServer", :namespace=>nil, :name=>"RemoteException", :encodingstyle=>"document"}, "InvalidAuthorizationTokenException_"=>{:use=>"literal", :ns=>"urn:SecurityServer", :namespace=>nil, :name=>"InvalidAuthorizationTokenException", :encodingstyle=>"document"}} }
+        :faults => {"RemoteException_"=>{:use=>"literal", :name=>"RemoteException", :ns=>"urn:SecurityServer", :namespace=>nil, :encodingstyle=>"document"}, "InvalidAuthorizationTokenException_"=>{:use=>"literal", :name=>"InvalidAuthorizationTokenException", :ns=>"urn:SecurityServer", :namespace=>nil, :encodingstyle=>"document"}} }
     ],
     [ "",
       "removePrincipalFromGroup",
@@ -292,7 +332,7 @@ class SecurityServerPortType < ::SOAP::RPC::Driver
         ["out", "parameters", ["::SOAP::SOAPElement", "urn:SecurityServer", "removePrincipalFromGroupResponse"]] ],
       { :request_style =>  :document, :request_use =>  :literal,
         :response_style => :document, :response_use => :literal,
-        :faults => {"RemoteException_"=>{:use=>"literal", :ns=>"urn:SecurityServer", :namespace=>nil, :name=>"RemoteException", :encodingstyle=>"document"}, "InvalidAuthorizationTokenException_"=>{:use=>"literal", :ns=>"urn:SecurityServer", :namespace=>nil, :name=>"InvalidAuthorizationTokenException", :encodingstyle=>"document"}, "ApplicationPermissionException_"=>{:use=>"literal", :ns=>"urn:SecurityServer", :namespace=>nil, :name=>"ApplicationPermissionException", :encodingstyle=>"document"}, "ObjectNotFoundException_"=>{:use=>"literal", :ns=>"urn:SecurityServer", :namespace=>nil, :name=>"ObjectNotFoundException", :encodingstyle=>"document"}} }
+        :faults => {"RemoteException_"=>{:use=>"literal", :name=>"RemoteException", :ns=>"urn:SecurityServer", :namespace=>nil, :encodingstyle=>"document"}, "InvalidAuthorizationTokenException_"=>{:use=>"literal", :name=>"InvalidAuthorizationTokenException", :ns=>"urn:SecurityServer", :namespace=>nil, :encodingstyle=>"document"}, "ApplicationPermissionException_"=>{:use=>"literal", :name=>"ApplicationPermissionException", :ns=>"urn:SecurityServer", :namespace=>nil, :encodingstyle=>"document"}, "ObjectNotFoundException_"=>{:use=>"literal", :name=>"ObjectNotFoundException", :ns=>"urn:SecurityServer", :namespace=>nil, :encodingstyle=>"document"}} }
     ],
     [ "",
       "findPrincipalByName",
@@ -300,7 +340,7 @@ class SecurityServerPortType < ::SOAP::RPC::Driver
         ["out", "parameters", ["::SOAP::SOAPElement", "urn:SecurityServer", "findPrincipalByNameResponse"]] ],
       { :request_style =>  :document, :request_use =>  :literal,
         :response_style => :document, :response_use => :literal,
-        :faults => {"RemoteException_"=>{:use=>"literal", :ns=>"urn:SecurityServer", :namespace=>nil, :name=>"RemoteException", :encodingstyle=>"document"}, "InvalidAuthorizationTokenException_"=>{:use=>"literal", :ns=>"urn:SecurityServer", :namespace=>nil, :name=>"InvalidAuthorizationTokenException", :encodingstyle=>"document"}, "ObjectNotFoundException_"=>{:use=>"literal", :ns=>"urn:SecurityServer", :namespace=>nil, :name=>"ObjectNotFoundException", :encodingstyle=>"document"}} }
+        :faults => {"RemoteException_"=>{:use=>"literal", :name=>"RemoteException", :ns=>"urn:SecurityServer", :namespace=>nil, :encodingstyle=>"document"}, "InvalidAuthorizationTokenException_"=>{:use=>"literal", :name=>"InvalidAuthorizationTokenException", :ns=>"urn:SecurityServer", :namespace=>nil, :encodingstyle=>"document"}, "ObjectNotFoundException_"=>{:use=>"literal", :name=>"ObjectNotFoundException", :ns=>"urn:SecurityServer", :namespace=>nil, :encodingstyle=>"document"}} }
     ],
     [ "",
       "resetPrincipalCredential",
@@ -308,7 +348,15 @@ class SecurityServerPortType < ::SOAP::RPC::Driver
         ["out", "parameters", ["::SOAP::SOAPElement", "urn:SecurityServer", "resetPrincipalCredentialResponse"]] ],
       { :request_style =>  :document, :request_use =>  :literal,
         :response_style => :document, :response_use => :literal,
-        :faults => {"RemoteException_"=>{:use=>"literal", :ns=>"urn:SecurityServer", :namespace=>nil, :name=>"RemoteException", :encodingstyle=>"document"}, "InvalidAuthorizationTokenException_"=>{:use=>"literal", :ns=>"urn:SecurityServer", :namespace=>nil, :name=>"InvalidAuthorizationTokenException", :encodingstyle=>"document"}, "ApplicationPermissionException_"=>{:use=>"literal", :ns=>"urn:SecurityServer", :namespace=>nil, :name=>"ApplicationPermissionException", :encodingstyle=>"document"}, "ObjectNotFoundException_"=>{:use=>"literal", :ns=>"urn:SecurityServer", :namespace=>nil, :name=>"ObjectNotFoundException", :encodingstyle=>"document"}, "InvalidEmailAddressException_"=>{:use=>"literal", :ns=>"urn:SecurityServer", :namespace=>nil, :name=>"InvalidEmailAddressException", :encodingstyle=>"document"}, "InvalidCredentialException_"=>{:use=>"literal", :ns=>"urn:SecurityServer", :namespace=>nil, :name=>"InvalidCredentialException", :encodingstyle=>"document"}} }
+        :faults => {"RemoteException_"=>{:use=>"literal", :name=>"RemoteException", :ns=>"urn:SecurityServer", :namespace=>nil, :encodingstyle=>"document"}, "InvalidAuthorizationTokenException_"=>{:use=>"literal", :name=>"InvalidAuthorizationTokenException", :ns=>"urn:SecurityServer", :namespace=>nil, :encodingstyle=>"document"}, "ApplicationPermissionException_"=>{:use=>"literal", :name=>"ApplicationPermissionException", :ns=>"urn:SecurityServer", :namespace=>nil, :encodingstyle=>"document"}, "ObjectNotFoundException_"=>{:use=>"literal", :name=>"ObjectNotFoundException", :ns=>"urn:SecurityServer", :namespace=>nil, :encodingstyle=>"document"}, "InvalidEmailAddressException_"=>{:use=>"literal", :name=>"InvalidEmailAddressException", :ns=>"urn:SecurityServer", :namespace=>nil, :encodingstyle=>"document"}, "InvalidCredentialException_"=>{:use=>"literal", :name=>"InvalidCredentialException", :ns=>"urn:SecurityServer", :namespace=>nil, :encodingstyle=>"document"}} }
+    ],
+    [ "",
+      "updateGroupAttribute",
+      [ ["in", "parameters", ["::SOAP::SOAPElement", "urn:SecurityServer", "updateGroupAttribute"]],
+        ["out", "parameters", ["::SOAP::SOAPElement", "urn:SecurityServer", "updateGroupAttributeResponse"]] ],
+      { :request_style =>  :document, :request_use =>  :literal,
+        :response_style => :document, :response_use => :literal,
+        :faults => {"RemoteException_"=>{:use=>"literal", :name=>"RemoteException", :ns=>"urn:SecurityServer", :namespace=>nil, :encodingstyle=>"document"}, "InvalidAuthorizationTokenException_"=>{:use=>"literal", :name=>"InvalidAuthorizationTokenException", :ns=>"urn:SecurityServer", :namespace=>nil, :encodingstyle=>"document"}, "ApplicationPermissionException_"=>{:use=>"literal", :name=>"ApplicationPermissionException", :ns=>"urn:SecurityServer", :namespace=>nil, :encodingstyle=>"document"}, "ObjectNotFoundException_"=>{:use=>"literal", :name=>"ObjectNotFoundException", :ns=>"urn:SecurityServer", :namespace=>nil, :encodingstyle=>"document"}} }
     ],
     [ "",
       "isGroupMember",
@@ -316,7 +364,7 @@ class SecurityServerPortType < ::SOAP::RPC::Driver
         ["out", "parameters", ["::SOAP::SOAPElement", "urn:SecurityServer", "isGroupMemberResponse"]] ],
       { :request_style =>  :document, :request_use =>  :literal,
         :response_style => :document, :response_use => :literal,
-        :faults => {"RemoteException_"=>{:use=>"literal", :ns=>"urn:SecurityServer", :namespace=>nil, :name=>"RemoteException", :encodingstyle=>"document"}, "InvalidAuthorizationTokenException_"=>{:use=>"literal", :ns=>"urn:SecurityServer", :namespace=>nil, :name=>"InvalidAuthorizationTokenException", :encodingstyle=>"document"}} }
+        :faults => {"RemoteException_"=>{:use=>"literal", :name=>"RemoteException", :ns=>"urn:SecurityServer", :namespace=>nil, :encodingstyle=>"document"}, "InvalidAuthorizationTokenException_"=>{:use=>"literal", :name=>"InvalidAuthorizationTokenException", :ns=>"urn:SecurityServer", :namespace=>nil, :encodingstyle=>"document"}} }
     ],
     [ "",
       "searchPrincipals",
@@ -324,7 +372,7 @@ class SecurityServerPortType < ::SOAP::RPC::Driver
         ["out", "parameters", ["::SOAP::SOAPElement", "urn:SecurityServer", "searchPrincipalsResponse"]] ],
       { :request_style =>  :document, :request_use =>  :literal,
         :response_style => :document, :response_use => :literal,
-        :faults => {"RemoteException_"=>{:use=>"literal", :ns=>"urn:SecurityServer", :namespace=>nil, :name=>"RemoteException", :encodingstyle=>"document"}, "InvalidAuthorizationTokenException_"=>{:use=>"literal", :ns=>"urn:SecurityServer", :namespace=>nil, :name=>"InvalidAuthorizationTokenException", :encodingstyle=>"document"}} }
+        :faults => {"RemoteException_"=>{:use=>"literal", :name=>"RemoteException", :ns=>"urn:SecurityServer", :namespace=>nil, :encodingstyle=>"document"}, "InvalidAuthorizationTokenException_"=>{:use=>"literal", :name=>"InvalidAuthorizationTokenException", :ns=>"urn:SecurityServer", :namespace=>nil, :encodingstyle=>"document"}} }
     ],
     [ "",
       "getDomain",
@@ -332,7 +380,7 @@ class SecurityServerPortType < ::SOAP::RPC::Driver
         ["out", "parameters", ["::SOAP::SOAPElement", "urn:SecurityServer", "getDomainResponse"]] ],
       { :request_style =>  :document, :request_use =>  :literal,
         :response_style => :document, :response_use => :literal,
-        :faults => {"RemoteException_"=>{:use=>"literal", :ns=>"urn:SecurityServer", :namespace=>nil, :name=>"RemoteException", :encodingstyle=>"document"}, "InvalidAuthorizationTokenException_"=>{:use=>"literal", :ns=>"urn:SecurityServer", :namespace=>nil, :name=>"InvalidAuthorizationTokenException", :encodingstyle=>"document"}} }
+        :faults => {"RemoteException_"=>{:use=>"literal", :name=>"RemoteException", :ns=>"urn:SecurityServer", :namespace=>nil, :encodingstyle=>"document"}, "InvalidAuthorizationTokenException_"=>{:use=>"literal", :name=>"InvalidAuthorizationTokenException", :ns=>"urn:SecurityServer", :namespace=>nil, :encodingstyle=>"document"}} }
     ],
     [ "",
       "authenticateApplication",
@@ -340,7 +388,7 @@ class SecurityServerPortType < ::SOAP::RPC::Driver
         ["out", "parameters", ["::SOAP::SOAPElement", "urn:SecurityServer", "authenticateApplicationResponse"]] ],
       { :request_style =>  :document, :request_use =>  :literal,
         :response_style => :document, :response_use => :literal,
-        :faults => {"RemoteException_"=>{:use=>"literal", :ns=>"urn:SecurityServer", :namespace=>nil, :name=>"RemoteException", :encodingstyle=>"document"}, "InvalidAuthenticationException_"=>{:use=>"literal", :ns=>"urn:SecurityServer", :namespace=>nil, :name=>"InvalidAuthenticationException", :encodingstyle=>"document"}, "InvalidAuthorizationTokenException_"=>{:use=>"literal", :ns=>"urn:SecurityServer", :namespace=>nil, :name=>"InvalidAuthorizationTokenException", :encodingstyle=>"document"}} }
+        :faults => {"RemoteException_"=>{:use=>"literal", :name=>"RemoteException", :ns=>"urn:SecurityServer", :namespace=>nil, :encodingstyle=>"document"}, "InvalidAuthenticationException_"=>{:use=>"literal", :name=>"InvalidAuthenticationException", :ns=>"urn:SecurityServer", :namespace=>nil, :encodingstyle=>"document"}, "InvalidAuthorizationTokenException_"=>{:use=>"literal", :name=>"InvalidAuthorizationTokenException", :ns=>"urn:SecurityServer", :namespace=>nil, :encodingstyle=>"document"}} }
     ]
   ]
 
