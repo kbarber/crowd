@@ -1,5 +1,9 @@
-== 0.5.5 / 2009-09-09
 
+== 0.5.8 / 2010-07-14
+
+* 0.5.8 update by Stefan Wille <post@stefanwille.com>
+  * upgrade to crowd 2.0.5
+  * comment out specs for roles because of deprecation
 * 0.5.5 update by Olli Helenius <liff@iki.fi>
   * upgrade to crowd 1.6.1
 * 0.5.4 update by evgeny.zislis@gmail.com
