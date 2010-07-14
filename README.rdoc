@@ -97,13 +97,14 @@ Ruby client for Atlassian Crowd 2.0.5
 == FILES:
 
 * <tt>README.rdoc</tt> - You're soaking in it
+* <tt>demo/crowd_demo.rb</tt> - A demo that will get you started quickly
+* <tt>spec/crowd_spec.rb</tt> - Tests. Also the API documentation.
+* <tt>lib/crowd.rb</tt> - Class wrapping crowd calls
 * <tt>lib/crowd/soap/crowd-2.0.5.wsdl</tt> - Downloaded from Crowd
 * <tt>lib/crowd/soap/driver.rb</tt> - Generated
 * <tt>lib/crowd/soap/mapping_registry.rb</tt> - Generated
 * <tt>lib/crowd/soap/default.rb</tt> - Generated
 * <tt>lib/crowd/soap/SecurityServerClient.rb</tt> - Generated
-* <tt>lib/crowd.rb</tt> - Class wrapping crowd calls
-* <tt>spec/crowd_spec.rb</tt> - Tests
 
 == LICENSE:
 
