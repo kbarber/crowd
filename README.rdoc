@@ -1,17 +1,26 @@
 = crowd
+    updated by Stefan Wille <post@stefanwille.com>
     updated by Olli Helenius <liff@iki.fi>
     updated by Evgeny Zislis (evgeny.zislis@gmail.com)
     original by Jason Rimmer (jrimmer@irth.net) & gemified for rubyforge by Daniel Morrison (http://collectiveidea.com)
 
 == DESCRIPTION:
 
-A client for Atlassian[http://www.atlassian.com] Crowd[http://www.atlassian.com/crowd] v1.6.1
+A client for Atlassian[http://www.atlassian.com] Crowd[http://www.atlassian.com/crowd] v2.0.5
 
 === NOTES:
 WSDL stub generated with:
-  wsdl2ruby.rb --wsdl http://localhost:8095/crowd/services/SecurityServer?wsdl --type client
+  rake wsdl2ruby
+  
+RSpec tests run with:
+  rake test
+  (requires a Crowd server on localhost, easy to setup)  
+  
+Local gem installed with:
+  rake install
+    
 
-Original SOAP API is available from Atlassian at http://confluence.atlassian.com/display/CROWD/SOAP+API
+Original SOAP API is available from Atlassian at http://confluence.atlassian.com/display/CROWDDEV/SOAP+API
 
 == FEATURES:
 
@@ -58,12 +67,13 @@ Methods exercised (*implemented*, not implemented):
 * *updatePrincipalAttribute*
 - updatePrincipalCredential
 
+Role related methods were left in the Ruby API but are not tested. Roles are deprecated in favor of groups in Crowd 2.0
 
 Assumptions (configured in CrowdTest.rb):
 
+* Crowd Server is on localhost, port 8095
 * Application name and password is 'soaptest'
 * Application 'soaptest' directory set to 'True'
-* Crowd Server is on localhost, port 8095
 
 == TODO:
 
@@ -72,13 +82,13 @@ Assumptions (configured in CrowdTest.rb):
 
 == SYNOPSIS:
 
-Ruby client for Atlassian Crowd v1.6.1
+Ruby client for Atlassian Crowd 2.0.5
 
 == REQUIREMENTS:
 
 * Ruby v1.8.6
 * soap4r[http://dev.ctor.org/soap4r] v1.5.8
-* Atlassian Crowd[http://atlassian.com/crowd] v1.6.1
+* Atlassian Crowd[http://atlassian.com/crowd] v2.0
 
 == INSTALL:
 
@@ -87,7 +97,7 @@ Ruby client for Atlassian Crowd v1.6.1
 == FILES:
 
 * <tt>README.rdoc</tt> - You're soaking in it
-* <tt>lib/crowd/soap/crowd-1.6.1.wsdl</tt> - Downloaded from Crowd
+* <tt>lib/crowd/soap/crowd-2.0.5.wsdl</tt> - Downloaded from Crowd
 * <tt>lib/crowd/soap/driver.rb</tt> - Generated
 * <tt>lib/crowd/soap/mapping_registry.rb</tt> - Generated
 * <tt>lib/crowd/soap/default.rb</tt> - Generated
@@ -106,3 +116,6 @@ and in the process abandon all copyright protection.
 Updated by Evgeny Zislis, evgeny.zislis@gmail.com on 2008-05-14
 
 Updated by Olli Helenius <liff@iki.fi> on 2009-09-09
+
+Updated by Stefan Wille <post@stefanwille.com> on 2010-07-14
+
