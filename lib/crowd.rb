@@ -1,4 +1,5 @@
 #
+#  Updated by Stefan Wille, post@stefanwille.com on 2010-07-13
 #  Updated by Evgeny Zislis, evgeny.zislis@gmail.con on 2008-05-15
 #  Created by Jason Rimmer, jrimmer@irth.net on 2007-10-16.
 #  I hereby place this work that I have authored into the public domain
@@ -16,6 +17,19 @@ require File.join(File.dirname(__FILE__), 'crowd', 'soap', 'driver.rb')
 # Place 'server.wiredump_dev = STDERR' after any to see
 # the raw SOAP calls and responses in a test console
 #
+
+# public static final String USERNAME = "username";
+# public static final String FIRSTNAME = "givenName";
+# public static final String LASTNAME = "sn";
+# public static final String DISPLAYNAME = "displayName";
+# public static final String EMAIL = "mail";
+# public static final String ICON_LOCATION = "iconLocation";
+# public static final String PASSWORD_LASTCHANGED = "passwordLastChanged";
+# public static final String LAST_AUTHENTICATED = "lastAuthenticated";
+# public static final String INVALID_PASSWORD_ATTEMPTS = "invalidPasswordAttempts";
+# public static final String REQUIRES_PASSWORD_CHANGE = "requiresPasswordChange";
+# public static final String ACTIVE = "active";
+# 
 
 class Crowd
 
@@ -88,7 +102,7 @@ class Crowd
     response = authenticated_connection do
       pword = PasswordCredential.new(password, false)
       aovf = helper_validation_factors(validation_factors)
-      ctx = PrincipalAuthenticationContext.new(@@application_token.name, pword, username, aovf)
+      ctx = UserAuthenticationContext.new(@@application_token.name, pword, username, aovf)
       arg = AuthenticatePrincipal.new(@@application_token, ctx)
 
       server.authenticatePrincipal(arg)      
@@ -102,14 +116,17 @@ class Crowd
         return response.out
       when InvalidAuthenticationException
         return nil      
-      when InvalidAccountException
+      when InactiveAccountException
         return nil
       when nil #no reponse      
+        raise AuthenticationInvalidCredentialException, response
+      when ::AuthenticationException
         raise AuthenticationInvalidCredentialException, response
       else
         raise AuthenticationException, response
     end
   end
+    
   
   ##
   # Authenticates a principal without validating a password.
@@ -144,8 +161,8 @@ class Crowd
   # Add Principal
   def self.add_principal(username, password, description, is_active, attributes)
     response = authenticated_connection do
+      
       attrs = ArrayOfSOAPAttribute.new()
-
       attributes.each do |key, val|
         if (val.class == Array)
           attrVal = ArrayOfString.new(val)
@@ -162,13 +179,13 @@ class Crowd
 
       server.addPrincipal(arg)
     end
-
+    
     case response
       when AddPrincipalResponse
         return true
       when InvalidCredentialException
         raise AuthenticationInvalidCredentalException
-      when InvalidPrincipalException
+      when InvalidUserException
         raise AuthenticationInvalidException, response
       else
         raise AuthenticationException, response
@@ -177,12 +194,12 @@ class Crowd
   
   ##
   # Find Principal via username
-  def self.find_principal_by_username(username)
+  def self.find_principal_by_username(username)    
     response = authenticated_connection do
       arg = FindPrincipalByName.new(@@application_token, username)
       server.findPrincipalByName(arg)      
     end
-
+    
     case response
       when FindPrincipalByNameResponse
         return parse_principal(response.out)
@@ -191,6 +208,8 @@ class Crowd
       else
         raise AuthenticationException, response
     end
+  rescue AuthenticationException => e
+    raise AuthenticationObjectNotFoundException, e    
   end
   
   ##
@@ -210,10 +229,11 @@ class Crowd
     end 
   rescue AuthenticationObjectNotFoundException
     return nil
+  rescue AuthenticationException => e
+    nil
   rescue ::SOAP::FaultError => e
     raise AuthenticationException, e.message
-  end
-  
+  end  
   
   ##
   # Invalidate Principal Token
@@ -540,7 +560,7 @@ class Crowd
     p[:active] = rp.active
     p[:conception] = rp.conception
     p[:description] = rp.description
-    p[:directoryID] = rp.directoryID
+    p[:directoryID] = rp.directoryId
     p[:lastModified] = rp.lastModified
     p[:name] = rp.name
 
@@ -580,8 +600,9 @@ class Crowd
   # to re-authenticate if the token is invalid.
   def self.authenticated_connection
     raise ArgumentError unless block_given?
-    
+
     application_auth_check
+
     response = yield
   rescue AuthenticationException => e
     # Push the response into the exception message
@@ -600,7 +621,7 @@ class Crowd
     rescue Exception => e
       raise AuthenticationException, e
     end
-  rescue Exception, e
+  rescue Exception =>  e
     raise AuthenticationException, e
   ensure
     if response.is_a?(InvalidAuthorizationTokenException)
