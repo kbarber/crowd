@@ -137,5 +137,7 @@ describe Crowd do
    it "should find all groups" do
      Crowd.find_all_group_names.should be_true
    end
+   
+   
  
 end

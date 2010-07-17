@@ -31,21 +31,27 @@ class Crowd
   @@crowd_app_name = nil
   @@crowd_app_pword = nil
   @@crowd_url = nil
+  @@crowd_session_isauthenticated = 'session.isauthenticated'
+  @@crowd_session_tokenkey = 'session.tokenkey'
+  @@crowd_session_validationinterval = 'session.validationinterval'
+  @@crowd_session_lastvalidation = 'session.lastvalidation'
   
   public
   
-  
+  def self.application_token=(value); @@application_token = value; end
   def self.crowd_url=(value); @@crowd_url = value; end
   def self.crowd_app_name=(value); @@crowd_app_name = value; end
   def self.crowd_app_pword=(value); @@crowd_app_pword = value; end
-  def self.application_token=(value); @@application_token = value; end
-  
+  def self.crowd_session_lastvalidation=(value); @@crowd_session_lastvalidation = value; end
+  def self.crowd_session_tokenkey=(value); @@crowd_session_tokenkey = value; end
+  def self.crowd_session_validationinterval=(value); @@crowd_session_validationinterval = value; end
+  def self.crowd_session_lastvalidation=(value); @@crowd_session_lastvalidation = value; end
   
   # for testing
+  def self.application_token; @@application_token; end
   def self.crowd_url; @@crowd_url; end
   def self.crowd_app_name; @@crowd_app_name; end
   def self.crowd_app_pword; @@crowd_app_pword; end
-  def self.application_token; @@application_token; end
   
   public
   
