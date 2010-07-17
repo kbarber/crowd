@@ -1,26 +1,28 @@
 = crowd
-    updated by Stefan Wille <post@stefanwille.com>
-    updated by Olli Helenius <liff@iki.fi>
-    updated by Evgeny Zislis (evgeny.zislis@gmail.com)
-    original by Jason Rimmer (jrimmer@irth.net) & gemified for rubyforge by Daniel Morrison (http://collectiveidea.com)
 
 == DESCRIPTION:
 
 A client for Atlassian[http://www.atlassian.com] Crowd[http://www.atlassian.com/crowd] v2.0.5
 
-=== NOTES:
-WSDL stub generated with:
-  rake wsdl2ruby
-  
-RSpec tests run with:
-  rake test
-  (requires a Crowd server on localhost, easy to setup)  
-  
-Local gem installed with:
-  rake install
-    
+== INSTALL:
 
-Original SOAP API is available from Atlassian at http://confluence.atlassian.com/display/CROWDDEV/SOAP+API
+  sudo gem install crowd-stefanwille
+
+== REQUIREMENTS:
+
+* Ruby v1.8.6
+* soap4r[http://dev.ctor.org/soap4r] v1.5.8
+* Atlassian Crowd[http://atlassian.com/crowd] v2.0
+
+== USE:
+
+See demo/crowd_demo.rb and spec/crowd_spec.rb.
+
+Assumptions (used in demo/crowd_demo.rb and spec/crowd_spec.rb):
+
+* Crowd Server is on localhost, port 8095
+* Application name and password is 'soaptest'
+* Application 'soaptest' directory set to 'True'
 
 == FEATURES:
 
@@ -69,11 +71,19 @@ Methods exercised (*implemented*, not implemented):
 
 Role related methods were left in the Ruby API but are not tested. Roles are deprecated in favor of groups in Crowd 2.0
 
-Assumptions (configured in CrowdTest.rb):
+=== NOTES:
+WSDL stub generated with:
+  rake wsdl2ruby
+  
+RSpec tests run with:
+  rake test
+  (requires a Crowd server on localhost, easy to setup)  
+  
+Local gem installed with:
+  rake install
+    
 
-* Crowd Server is on localhost, port 8095
-* Application name and password is 'soaptest'
-* Application 'soaptest' directory set to 'True'
+Original SOAP API is available from Atlassian at http://confluence.atlassian.com/display/CROWDDEV/SOAP+API
 
 == TODO:
 
@@ -83,16 +93,6 @@ Assumptions (configured in CrowdTest.rb):
 == SYNOPSIS:
 
 Ruby client for Atlassian Crowd 2.0.5
-
-== REQUIREMENTS:
-
-* Ruby v1.8.6
-* soap4r[http://dev.ctor.org/soap4r] v1.5.8
-* Atlassian Crowd[http://atlassian.com/crowd] v2.0
-
-== INSTALL:
-
-  sudo gem install crowd-stefanwille
 
 == FILES:
 
@@ -105,6 +105,13 @@ Ruby client for Atlassian Crowd 2.0.5
 * <tt>lib/crowd/soap/mapping_registry.rb</tt> - Generated
 * <tt>lib/crowd/soap/default.rb</tt> - Generated
 * <tt>lib/crowd/soap/SecurityServerClient.rb</tt> - Generated
+
+== AUTHORS:
+
+updated by Stefan Wille <post@stefanwille.com>
+updated by Olli Helenius <liff@iki.fi>
+updated by Evgeny Zislis (evgeny.zislis@gmail.com)
+original by Jason Rimmer (jrimmer@irth.net) & gemified for rubyforge by Daniel Morrison (http://collectiveidea.com)
 
 == LICENSE:
 
