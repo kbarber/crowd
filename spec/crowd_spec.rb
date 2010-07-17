@@ -11,15 +11,7 @@ gem 'soap4r'
 
 require File.join(File.dirname(__FILE__), '..', 'lib', 'crowd')
 
-# need a special accessor for tests
-class Crowd
-  def self.application_token
-    @@application_token
-  end
-  def self.application_token=(value)
-    @@application_token = value
-  end
-end
+include Crowd::UserAttributeKeys
 
 describe Crowd do
   before(:all) do
@@ -34,7 +26,7 @@ describe Crowd do
   
   it "should add a principal" do
     Crowd.add_principal('unittest','unittest','unit test user', true,
-      { 'mail' => 'unittest@unittest.com', 'givenName' => 'Unit', 'sn' => 'Test' }).should_not be_nil
+      { 'mail' => 'unittest@unittest.com', FIRSTNAME => 'Unit', LASTNAME => 'Test' }).should_not be_nil
   end
   
   it "should find valid principal by name" do
@@ -89,7 +81,7 @@ describe Crowd do
   #    Crowd.remove_role('test_role').should be_true
   #  end
    
-   it "should reset expired application token" do
+   it "should revalidate expired application token" do
      Crowd.application_token.token = 'fake'
      Crowd.application_token.token.should eql('fake')
      Crowd.find_principal_by_username('unittest')

@@ -13,23 +13,7 @@ gem 'soap4r'
 require File.join(File.dirname(__FILE__), 'crowd', 'version')
 require File.join(File.dirname(__FILE__), 'crowd', 'soap', 'driver.rb')
 
-#
-# Place 'server.wiredump_dev = STDERR' after any to see
-# the raw SOAP calls and responses in a test console
-#
 
-# public static final String USERNAME = "username";
-# public static final String FIRSTNAME = "givenName";
-# public static final String LASTNAME = "sn";
-# public static final String DISPLAYNAME = "displayName";
-# public static final String EMAIL = "mail";
-# public static final String ICON_LOCATION = "iconLocation";
-# public static final String PASSWORD_LASTCHANGED = "passwordLastChanged";
-# public static final String LAST_AUTHENTICATED = "lastAuthenticated";
-# public static final String INVALID_PASSWORD_ATTEMPTS = "invalidPasswordAttempts";
-# public static final String REQUIRES_PASSWORD_CHANGE = "requiresPasswordChange";
-# public static final String ACTIVE = "active";
-# 
 
 class Crowd
 
@@ -46,14 +30,15 @@ class Crowd
   @@application_token = nil
   @@crowd_app_name = nil
   @@crowd_app_pword = nil
+  @@crowd_url = nil
   
   public
   
-  @@crowd_url = nil
   
   def self.crowd_url=(value); @@crowd_url = value; end
   def self.crowd_app_name=(value); @@crowd_app_name = value; end
   def self.crowd_app_pword=(value); @@crowd_app_pword = value; end
+  def self.application_token=(value); @@application_token = value; end
   
   
   # for testing
@@ -62,6 +47,25 @@ class Crowd
   def self.crowd_app_pword; @@crowd_app_pword; end
   def self.application_token; @@application_token; end
   
+  public
+  
+  #
+  # Keys for user attributes
+  #
+  module UserAttributeKeys
+    USERNAME = "username"
+    FIRSTNAME = "givenName"
+    LASTNAME = "sn"
+    DISPLAYNAME = "displayName"
+    EMAIL = "mail"
+    ICON_LOCATION = "iconLocation"
+    PASSWORD_LASTCHANGED = "passwordLastChanged"
+    LAST_AUTHENTICATED = "lastAuthenticated"
+    INVALID_PASSWORD_ATTEMPTS = "invalidPasswordAttempts"
+    REQUIRES_PASSWORD_CHANGE = "requiresPasswordChange"
+    ACTIVE = "active"
+  end
+
   public
   
   #
