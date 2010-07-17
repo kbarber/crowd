@@ -1,7 +1,5 @@
 = crowd
 
-== DESCRIPTION:
-
 A client for Atlassian[http://www.atlassian.com] Crowd[http://www.atlassian.com/crowd] v2.0.5
 
 == INSTALL:
@@ -109,8 +107,11 @@ Ruby client for Atlassian Crowd 2.0.5
 == AUTHORS:
 
 updated by Stefan Wille <post@stefanwille.com>
+
 updated by Olli Helenius <liff@iki.fi>
+
 updated by Evgeny Zislis (evgeny.zislis@gmail.com)
+
 original by Jason Rimmer (jrimmer@irth.net) & gemified for rubyforge by Daniel Morrison (http://collectiveidea.com)
 
 == LICENSE:
