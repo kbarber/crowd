@@ -42,14 +42,49 @@ class Crowd
   # Configuration      
   #
       
+  ''' 
+  The URL to use when connecting with the integration libraries to communicate with the Crowd server. 
+  '''
   def self.crowd_url=(value); @@crowd_url = value; end
+
+  ''' 
+  The name that the application will use when authenticating with the Crowd server. 
+  This needs to match the name you specified in Crowd server.
+  '''
   def self.crowd_app_name=(value); @@crowd_app_name = value; end
+
+  ''' 
+  The password that the application will use when authenticating with the Crowd server. 
+  This needs to match the password you specified in Crowd server. 
+  '''
   def self.crowd_app_pword=(value); @@crowd_app_pword = value; end
   
-    # These configuration variables have good defaults
-  def self.crowd_session_isauthenticated=(value); @@crowd_session_isauthenticated = value; end
-  def self.crowd_session_tokenkey=(value); @@crowd_session_tokenkey = value; end
+  #
+  # Relevant for SSO:
+  #
+  
+  ''' 
+  The number of minutes to cache authentication validation in the session. 
+  If this value is set to 0, each HTTP request will be authenticated with the Crowd server. 
+  '''
   def self.crowd_session_validationinterval=(value); @@crowd_session_validationinterval = value; end
+
+  ''' 
+  The session key to use when storing a Boolean  value indicating whether the user is authenticated or not. 
+  Has a good default.
+  '''
+  def self.crowd_session_isauthenticated=(value); @@crowd_session_isauthenticated = value; end
+
+  ''' 
+  The session key to use when storing a String value of the users authentication token. 
+  Has a good default.
+  '''
+  def self.crowd_session_tokenkey=(value); @@crowd_session_tokenkey = value; end
+
+  ''' 
+  The session key to use when storing a timestamp of the users last authentication.   
+  Has a good default.
+  '''
   def self.crowd_session_lastvalidation=(value); @@crowd_session_lastvalidation = value; end
   
   # for testing
