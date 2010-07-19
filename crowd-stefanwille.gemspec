@@ -31,6 +31,7 @@ Gem::Specification.new do |s|
      "lib/crowd/soap/default.rb",
      "lib/crowd/soap/driver.rb",
      "lib/crowd/soap/mapping_registry.rb",
+     "lib/crowd/user_attribute_keys.rb",
      "lib/crowd/version.rb",
      "spec/crowd_spec.rb"
   ]

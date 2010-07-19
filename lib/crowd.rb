@@ -31,7 +31,6 @@ class Crowd
   @@crowd_app_name = nil
   @@crowd_app_pword = nil
   @@crowd_url = nil
-  @@crowd_session_isauthenticated = 'session.isauthenticated'
   @@crowd_session_tokenkey = 'session.tokenkey'
   @@crowd_session_validationinterval = 0
   @@crowd_session_lastvalidation = 'session.lastvalidation'
@@ -70,12 +69,6 @@ class Crowd
   def self.crowd_session_validationinterval=(value); @@crowd_session_validationinterval = value; end
 
   ''' 
-  The session key to use when storing a Boolean  value indicating whether the user is authenticated or not. 
-  Has a good default.
-  '''
-  def self.crowd_session_isauthenticated=(value); @@crowd_session_isauthenticated = value; end
-
-  ''' 
   The session key to use when storing a String value of the users authentication token. 
   Has a good default.
   '''
@@ -94,7 +87,6 @@ class Crowd
   def self.crowd_app_name; @@crowd_app_name; end
   def self.crowd_app_pword; @@crowd_app_pword; end
 
-  def self.crowd_session_isauthenticated; @@crowd_session_isauthenticated; end
   def self.crowd_session_tokenkey; @@crowd_session_tokenkey; end
   def self.crowd_session_validationinterval; @@crowd_session_validationinterval; end
   def self.crowd_session_lastvalidation; @@crowd_session_lastvalidation; end    
