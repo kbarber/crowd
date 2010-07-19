@@ -10,9 +10,9 @@ require 'base64'
 require 'rubygems'
 gem 'soap4r'
 
+require File.join(File.dirname(__FILE__), 'crowd', 'user_attribute_keys')
 require File.join(File.dirname(__FILE__), 'crowd', 'version')
 require File.join(File.dirname(__FILE__), 'crowd', 'soap', 'driver.rb')
-
 
 
 class Crowd
@@ -31,16 +31,26 @@ class Crowd
   @@crowd_app_name = nil
   @@crowd_app_pword = nil
   @@crowd_url = nil
-  
+  @@crowd_session_isauthenticated = 'session.isauthenticated'
+  @@crowd_session_tokenkey = 'session.tokenkey'
+  @@crowd_session_validationinterval = 0
+  @@crowd_session_lastvalidation = 'session.lastvalidation'
+    
   public
   
   #
   # Configuration      
   #
-  
+      
   def self.crowd_url=(value); @@crowd_url = value; end
   def self.crowd_app_name=(value); @@crowd_app_name = value; end
   def self.crowd_app_pword=(value); @@crowd_app_pword = value; end
+  
+    # These configuration variables have good defaults
+  def self.crowd_session_isauthenticated=(value); @@crowd_session_isauthenticated = value; end
+  def self.crowd_session_tokenkey=(value); @@crowd_session_tokenkey = value; end
+  def self.crowd_session_validationinterval=(value); @@crowd_session_validationinterval = value; end
+  def self.crowd_session_lastvalidation=(value); @@crowd_session_lastvalidation = value; end
   
   # for testing
   def self.application_token=(value); @@application_token = value; end
@@ -48,26 +58,13 @@ class Crowd
   def self.crowd_url; @@crowd_url; end
   def self.crowd_app_name; @@crowd_app_name; end
   def self.crowd_app_pword; @@crowd_app_pword; end
-  
-  public
-  
-  #
-  # Keys for user attributes
-  #
-  module UserAttributeKeys
-    USERNAME = "username"
-    FIRSTNAME = "givenName"
-    LASTNAME = "sn"
-    DISPLAYNAME = "displayName"
-    EMAIL = "mail"
-    ICON_LOCATION = "iconLocation"
-    PASSWORD_LASTCHANGED = "passwordLastChanged"
-    LAST_AUTHENTICATED = "lastAuthenticated"
-    INVALID_PASSWORD_ATTEMPTS = "invalidPasswordAttempts"
-    REQUIRES_PASSWORD_CHANGE = "requiresPasswordChange"
-    ACTIVE = "active"
-  end
 
+  def self.crowd_session_isauthenticated; @@crowd_session_isauthenticated; end
+  def self.crowd_session_tokenkey; @@crowd_session_tokenkey; end
+  def self.crowd_session_validationinterval; @@crowd_session_validationinterval; end
+  def self.crowd_session_lastvalidation; @@crowd_session_lastvalidation; end    
+
+  
   public
   
   #
