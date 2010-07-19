@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{crowd-stefanwille}
-  s.version = "0.5.8"
+  s.version = "0.5.9"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Stefan Wille", "Evgeny Zislis", "Jason Rimmer & Daniel Morrison"]
-  s.date = %q{2010-07-14}
+  s.date = %q{2010-07-19}
   s.description = %q{A client for Atlassian[http://www.atlassian.com] Crowd[http://www.atlassian.com/crowd] v2.0.5}
   s.email = %q{post @nospam@ stefanwille.com}
   s.extra_rdoc_files = [
@@ -20,6 +20,7 @@ Gem::Specification.new do |s|
      "History.txt",
      "README.rdoc",
      "Rakefile",
+     "crowd-stefanwille.gemspec",
      "demo/crowd_demo.rb",
      "lib/crowd.rb",
      "lib/crowd/http/request.rb",
@@ -31,8 +32,7 @@ Gem::Specification.new do |s|
      "lib/crowd/soap/driver.rb",
      "lib/crowd/soap/mapping_registry.rb",
      "lib/crowd/version.rb",
-     "spec/crowd_spec.rb",
-     "stefanwille-crowd.gemspec"
+     "spec/crowd_spec.rb"
   ]
   s.homepage = %q{http://github.com/stefanwille/crowd}
   s.rdoc_options = ["--charset=UTF-8"]

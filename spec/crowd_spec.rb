@@ -88,7 +88,7 @@ describe Crowd do
      Crowd.application_token.token.should_not eql('fake')
    end
    
-   it "should validate principal token with invalid token" do
+   it "should invalidate principal token with invalid token" do
      Crowd.is_valid_principal_token?('invalid').should be_false
    end
     

@@ -31,10 +31,6 @@ class Crowd
   @@crowd_app_name = nil
   @@crowd_app_pword = nil
   @@crowd_url = nil
-  @@crowd_session_isauthenticated = 'session.isauthenticated'
-  @@crowd_session_tokenkey = 'session.tokenkey'
-  @@crowd_session_validationinterval = 0
-  @@crowd_session_lastvalidation = 'session.lastvalidation'
   
   public
   
@@ -45,11 +41,6 @@ class Crowd
   def self.crowd_url=(value); @@crowd_url = value; end
   def self.crowd_app_name=(value); @@crowd_app_name = value; end
   def self.crowd_app_pword=(value); @@crowd_app_pword = value; end
-  # These configuration variables have good defaults
-  def self.crowd_session_lastvalidation=(value); @@crowd_session_lastvalidation = value; end
-  def self.crowd_session_tokenkey=(value); @@crowd_session_tokenkey = value; end
-  def self.crowd_session_validationinterval=(value); @@crowd_session_validationinterval = value; end
-  def self.crowd_session_lastvalidation=(value); @@crowd_session_lastvalidation = value; end
   
   # for testing
   def self.application_token=(value); @@application_token = value; end
