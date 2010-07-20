@@ -1,6 +1,10 @@
 
-== 0.5.8 / 2010-07-14
+== 0.5.9 / 2010-07-20
 
+* 0.5.9 update by Stefan Wille <post@stefanwille.com>
+  * improve documentation
+  * add required configuration for SSO
+  * add keys used to define user attributes in UserAttributeKeys
 * 0.5.8 update by Stefan Wille <post@stefanwille.com>
   * upgrade to crowd 2.0.5
   * comment out specs for roles because of deprecation
