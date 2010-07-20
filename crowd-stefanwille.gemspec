@@ -9,8 +9,8 @@ Gem::Specification.new do |s|
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Stefan Wille", "Evgeny Zislis", "Jason Rimmer & Daniel Morrison"]
-  s.date = %q{2010-07-19}
-  s.description = %q{A client for Atlassian[http://www.atlassian.com] Crowd[http://www.atlassian.com/crowd] v2.0.5}
+  s.date = %q{2010-07-20}
+  s.description = %q{A client for Atlassian[http://www.atlassian.com] Crowd[http://www.atlassian.com/crowd] v2.0. Tested with Crowd 2.0.2 and 2.0.5.}
   s.email = %q{post @nospam@ stefanwille.com}
   s.extra_rdoc_files = [
     "README.rdoc"
@@ -38,8 +38,9 @@ Gem::Specification.new do |s|
   s.homepage = %q{http://github.com/stefanwille/crowd}
   s.rdoc_options = ["--charset=UTF-8"]
   s.require_paths = ["lib"]
+  s.rubyforge_project = %q{nowarning}
   s.rubygems_version = %q{1.3.7}
-  s.summary = %q{Ruby client for Atlassian Crowd}
+  s.summary = %q{Ruby client for Atlassian Crowd 2.0}
   s.test_files = [
     "spec/crowd_spec.rb"
   ]

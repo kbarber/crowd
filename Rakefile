@@ -28,13 +28,15 @@ begin
   Jeweler::Tasks.new do |gemspec|
     gemspec.name = "crowd-stefanwille"
     gemspec.version = Crowd::Version::STRING
-    gemspec.summary = "Ruby client for Atlassian Crowd"
-    gemspec.description = "A client for Atlassian[http://www.atlassian.com] Crowd[http://www.atlassian.com/crowd] v2.0.5"
+    gemspec.summary = "Ruby client for Atlassian Crowd 2.0"
+    gemspec.description = "A client for Atlassian[http://www.atlassian.com] Crowd[http://www.atlassian.com/crowd] v2.0. Tested with Crowd 2.0.2 and 2.0.5."
     gemspec.email = "post @nospam@ stefanwille.com"
     gemspec.homepage = "http://github.com/stefanwille/crowd"
     gemspec.authors = ["Stefan Wille", "Evgeny Zislis", "Jason Rimmer & Daniel Morrison"]
     gemspec.add_dependency('soap4r')
     gemspec.add_development_dependency('rspec')
+    # Silence a warning about missing rubyforge_project
+    gemspec.rubyforge_project = "nowarning"
   end
 rescue LoadError
   puts "Jeweler not available. Install it with: gem install jeweler"
