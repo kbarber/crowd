@@ -13,6 +13,7 @@ gem 'soap4r'
 require File.join(File.dirname(__FILE__), 'crowd', 'user_attribute_keys')
 require File.join(File.dirname(__FILE__), 'crowd', 'version')
 require File.join(File.dirname(__FILE__), 'crowd', 'soap', 'driver.rb')
+require File.join(File.dirname(__FILE__), 'crowd', 'single_sign_on')
 
 
 class Crowd
