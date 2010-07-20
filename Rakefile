@@ -23,7 +23,7 @@ task :wsdl2ruby do
   puts "You will need to modify some 'require' statements in the generated sources manually to load files from the right location."
 end
 
-task :release_to_rubygems => [:test, :build] do
+task :push => [:test, :build] do
   system("gem push pkg/crowd-stefanwille-#{Crowd::Version::STRING}.gem")
 end
 
