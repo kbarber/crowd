@@ -1,8 +1,10 @@
 class Crowd
   
   '''
-  The single sign on (SSO) functionality. 
+  The single sign on (SSO) functionality as a mixin module. 
+  
   To use this module, include it in your Rails ApplicationController class.
+  The module uses controller methods such as cookies, session, params.
   '''
   module SingleSignOn
       
