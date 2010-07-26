@@ -2,7 +2,8 @@
 == 0.5.11 / 2010-07-26
 * 0.5.11
   * add Crowd.crowd_cookie_tokenkey for SSO
-  * add Crowd.get_domain 
+  * add Crowd.crowd_validation_factors_need_user_agent for SSO
+  * add Crowd.get_cookie_info
 * 0.5.10
   * fixed bug in validation factor serialization
 * 0.5.9 
