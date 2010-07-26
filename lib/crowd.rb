@@ -31,6 +31,7 @@ class Crowd
   @@crowd_app_name = nil
   @@crowd_app_pword = nil
   @@crowd_url = nil
+  @@crowd_cookie_tokenkey = 'crowd.token_key'
   @@crowd_session_tokenkey = 'session.tokenkey'
   @@crowd_session_validationinterval = 0
   @@crowd_session_lastvalidation = 'session.lastvalidation'
@@ -41,43 +42,36 @@ class Crowd
   # Configuration      
   #
       
-  ''' 
-  The URL to use when connecting with the integration libraries to communicate with the Crowd server. 
-  '''
+  # The URL to use when connecting with the integration libraries to communicate with the Crowd server. 
   def self.crowd_url=(value); @@crowd_url = value; end
 
-  ''' 
-  The name that the application will use when authenticating with the Crowd server. 
-  This needs to match the name you specified in Crowd server.
-  '''
+  # The name that the application will use when authenticating with the Crowd server. 
+  # This needs to match the name you specified in Crowd server.
   def self.crowd_app_name=(value); @@crowd_app_name = value; end
 
-  ''' 
-  The password that the application will use when authenticating with the Crowd server. 
-  This needs to match the password you specified in Crowd server. 
-  '''
+  # The password that the application will use when authenticating with the Crowd server. 
+  # This needs to match the password you specified in Crowd server. 
   def self.crowd_app_pword=(value); @@crowd_app_pword = value; end
   
   #
   # Relevant for SSO:
   #
   
-  ''' 
-  The number of minutes to cache authentication validation in the session. 
-  If this value is set to 0, each HTTP request will be authenticated with the Crowd server. 
-  '''
+  # The number of minutes to cache authentication validation in the session. 
+  # If this value is set to 0, each HTTP request will be authenticated with the Crowd server. 
+  # The default is 0.
   def self.crowd_session_validationinterval=(value); @@crowd_session_validationinterval = value; end
 
-  ''' 
-  The session key to use when storing a String value of the users authentication token. 
-  Has a good default.
-  '''
+  # The cookie key to use when creating or reading the SSO token.
+  # Has a good default.
+  def self.crowd_cookie_tokenkey=(value); @@crowd_cookie_tokenkey = value; end
+
+  # The session key to use when storing a String value of the users authentication token. 
+  # Has a good default.
   def self.crowd_session_tokenkey=(value); @@crowd_session_tokenkey = value; end
 
-  ''' 
-  The session key to use when storing a timestamp of the users last authentication.   
-  Has a good default.
-  '''
+  # The session key to use when storing a timestamp of the users last authentication.   
+  # Has a good default.
   def self.crowd_session_lastvalidation=(value); @@crowd_session_lastvalidation = value; end
   
   # for testing
@@ -88,6 +82,7 @@ class Crowd
   def self.crowd_app_pword; @@crowd_app_pword; end
 
   def self.crowd_session_tokenkey; @@crowd_session_tokenkey; end
+  def self.crowd_cookie_tokenkey; @@crowd_cookie_tokenkey; end
   def self.crowd_session_validationinterval; @@crowd_session_validationinterval; end
   def self.crowd_session_lastvalidation; @@crowd_session_lastvalidation; end    
 
@@ -107,7 +102,6 @@ class Crowd
   # Public methods
   #
 
-  ##
   # Authenticates an application client to the Crowd security server.
   def self.authenticate_application(validation_factors = {})
     pword = PasswordCredential.new(@@crowd_app_pword, false)
@@ -122,8 +116,9 @@ class Crowd
     @@application_token = response.out
   end
   
-  ##
   # Authenticates a principal verses the calling who is in the application's assigned directory.
+  #
+  # Validation factors are essential for SSO interoperable with Atlassian's Java client library.
   #
   # To use SSO, set:
   #   validation_factors = { 'USER_AGENT' => '...', 'REMOTE_ADDRESS' => '...' }
@@ -158,7 +153,6 @@ class Crowd
   end
     
   
-  ##
   # Authenticates a principal without validating a password.
   def self.create_principal_token(username, validation_factors = {})
     response = authenticated_connection do
@@ -169,7 +163,6 @@ class Crowd
     response.out
   end
   
-  ##
   # Checks if the principal's current token is still valid.
   def self.is_valid_principal_token?(principal_token, validation_factors = {})
     response = authenticated_connection do
@@ -186,8 +179,7 @@ class Crowd
     end
   end
   
-  ##
-  # Add Principal
+  # Add principal to the crowd directory.
   def self.add_principal(username, password, description, is_active, attributes)
     response = authenticated_connection do
       
@@ -221,8 +213,7 @@ class Crowd
     end
   end
   
-  ##
-  # Find Principal via username
+  # Find principal via username.
   def self.find_principal_by_username(username)    
     response = authenticated_connection do
       arg = FindPrincipalByName.new(@@application_token, username)
@@ -241,8 +232,7 @@ class Crowd
     raise AuthenticationObjectNotFoundException, e    
   end
   
-  ##
-  # Find Principal via token
+  # Find principal via token.
   def self.find_principal_by_token(token)
     response = authenticated_connection do
       arg = FindPrincipalByToken.new(@@application_token, token)
@@ -264,8 +254,7 @@ class Crowd
     raise AuthenticationException, e.message
   end  
   
-  ##
-  # Invalidate Principal Token
+  # Invalidate principal token.
   def self.invalidate_principal_token(token)
     response = authenticated_connection do 
       arg = InvalidatePrincipalToken.new(@@application_token, token)
@@ -280,8 +269,7 @@ class Crowd
     end
   end
   
-  ##
-  # Remove principal attribute 
+  # Remove principal attribute.
   def self.remove_attribute_principal(username, attributes)    
     if(attributes.class != Array)
       attributes = [attributes]
@@ -304,7 +292,6 @@ class Crowd
     end
   end
   
-  ##
   # Add attribute to principal
   def self.add_attribute_principal(username, attributes)
     attributes.each do |key, val|
@@ -335,7 +322,6 @@ class Crowd
     true
   end
   
-  ##
   # Update attribute on principal
   def self.update_attribute_principal(username, attributes)    
     attributes.each do |key, val|
@@ -366,7 +352,6 @@ class Crowd
     true
   end
   
-  ##
   # Remove principal
   def self.remove_principal(username)
     response = authenticated_connection do
@@ -384,7 +369,6 @@ class Crowd
     end    
   end
   
-  ##
   # Find all principal names
   def self.find_all_principal_names    
     response = authenticated_connection do
@@ -402,7 +386,6 @@ class Crowd
     end
   end
 
-  ##
   # Find all role names
   def self.find_all_role_names
     response = authenticated_connection do 
@@ -420,7 +403,6 @@ class Crowd
     end
   end
   
-  ##
   # Add Role
   def self.add_role(name, description, is_active)
     response = authenticated_connection do 
@@ -439,7 +421,6 @@ class Crowd
     end
   end
   
-  ##
   # Add Principal to Role
   def self.add_principal_to_role(username, role)    
     response = authenticated_connection do         
@@ -458,7 +439,6 @@ class Crowd
     end
   end
   
-  ##
   # Remove Principal form Role
   def self.remove_principal_from_role(username, role)
     response = authenticated_connection do 
@@ -476,7 +456,6 @@ class Crowd
     end
   end
 
-  ##
   # Is Role Member
   def self.is_role_member(username, role)
     response = authenticated_connection do 
@@ -496,7 +475,6 @@ class Crowd
   
   
   
-  ##
   # Remove Role
   def self.remove_role(role)
     response = authenticated_connection do 
@@ -514,7 +492,6 @@ class Crowd
     end
   end
   
-  ##
   # Is Group Member
   def self.is_group_member(username, group)
     response = authenticated_connection do 
@@ -664,7 +641,7 @@ class Crowd
   ##
   # Returns the domain configured in Crowd or null if no domain has been set.
   #
-  # *Deprecated:* This method has been superceded by get_cookie_config.
+  # *Deprecated:* This method has been superceded by get_cookie_info.
   def self.get_domain
     response = authenticated_connection do
       arg = GetDomain.new(@@application_token)
@@ -673,6 +650,22 @@ class Crowd
 
     case response
     when GetDomainResponse
+      return response.out
+    else
+      raise AuthenticationException, response
+    end
+  end
+
+  # Returns the sso cookie configuration.
+  # Properties: cookie_info.domain and cookie_info.secure
+  def self.get_cookie_info
+    response = authenticated_connection do
+      arg = GetCookieInfo.new(@@application_token)
+      server.getCookieInfo(arg)
+    end
+
+    case response
+    when GetCookieInfoResponse
       return response.out
     else
       raise AuthenticationException, response

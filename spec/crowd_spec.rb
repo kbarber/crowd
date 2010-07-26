@@ -125,7 +125,7 @@ describe Crowd do
      token = Crowd.authenticate_principal('unittest','unittest')
      # overwrite application token
      Crowd.application_token.token = 'fake'
-     Crowd.application_token.token.should eql('fake')
+     Crowd.application_token.token.should == 'fake'
      # application should re-authenticate
      Crowd.is_valid_principal_token?(token).should be_true
    end
@@ -142,6 +142,10 @@ describe Crowd do
    
    it "should find all groups" do
      Crowd.find_all_group_names.should be_true
+   end
+ 
+   it "should get the cookie info" do
+     Crowd.get_cookie_info.should_not be_nil
    end
  
 end
