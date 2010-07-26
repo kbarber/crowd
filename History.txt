@@ -1,7 +1,9 @@
 
-== 0.5.9 / 2010-07-20
+== 0.5.10 / 2010-07-26
 
-* 0.5.9 update by Stefan Wille <post@stefanwille.com>
+* 0.5.10
+  * fixed bug in validation factor serialization
+* 0.5.9 
   * improve documentation
   * add required configuration for SSO
   * add keys used to define user attributes in UserAttributeKeys
