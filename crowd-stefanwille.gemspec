@@ -5,12 +5,12 @@
 
 Gem::Specification.new do |s|
   s.name = %q{crowd-stefanwille}
-  s.version = "0.5.10"
+  s.version = "0.5.11"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Stefan Wille", "Evgeny Zislis", "Jason Rimmer & Daniel Morrison"]
   s.date = %q{2010-07-26}
-  s.description = %q{A client for Atlassian[http://www.atlassian.com] Crowd[http://www.atlassian.com/crowd] v2.0. Tested with Crowd 2.0.2 and 2.0.5.}
+  s.description = %q{A client for Atlassian Crowd v2.0. Tested with Crowd 2.0.2 and 2.0.5.}
   s.email = %q{post @nospam@ stefanwille.com}
   s.extra_rdoc_files = [
     "README.rdoc"
@@ -23,9 +23,6 @@ Gem::Specification.new do |s|
      "crowd-stefanwille.gemspec",
      "demo/crowd_demo.rb",
      "lib/crowd.rb",
-     "lib/crowd/http/request.rb",
-     "lib/crowd/http/response.rb",
-     "lib/crowd/http/sso.rb",
      "lib/crowd/soap/SecurityServerClient.rb",
      "lib/crowd/soap/crowd-2.0.5.wsdl",
      "lib/crowd/soap/default.rb",
