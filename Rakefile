@@ -33,7 +33,7 @@ begin
     gemspec.name = "crowd-stefanwille"
     gemspec.version = Crowd::Version::STRING
     gemspec.summary = "Ruby client for Atlassian Crowd 2.0"
-    gemspec.description = "A client for Atlassian[http://www.atlassian.com] Crowd[http://www.atlassian.com/crowd] v2.0. Tested with Crowd 2.0.2 and 2.0.5."
+    gemspec.description = "A client for Atlassian Crowd v2.0. Tested with Crowd 2.0.2 and 2.0.5."
     gemspec.email = "post @nospam@ stefanwille.com"
     gemspec.homepage = "http://github.com/stefanwille/crowd"
     gemspec.authors = ["Stefan Wille", "Evgeny Zislis", "Jason Rimmer & Daniel Morrison"]
