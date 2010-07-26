@@ -97,6 +97,12 @@ describe Crowd do
      Crowd.is_valid_principal_token?(token).should be_true
    end
 
+   it "should use validation factors to create the token" do
+     token1 = Crowd.authenticate_principal('unittest','unittest')
+     token2 = Crowd.authenticate_principal('unittest','unittest', { 'USER_AGENT' => 'Mozilla', 'REMOTE_ADDRESS' => '127.0.0.1', 'NAME' => 'soaptest' })
+     token1.should_not eql token2
+   end
+
    it "should validate principal token with valid token" do
      token = Crowd.authenticate_principal('unittest','unittest')
      Crowd.is_valid_principal_token?(token).should be_true

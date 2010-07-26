@@ -13,7 +13,6 @@ gem 'soap4r'
 require File.join(File.dirname(__FILE__), 'crowd', 'user_attribute_keys')
 require File.join(File.dirname(__FILE__), 'crowd', 'version')
 require File.join(File.dirname(__FILE__), 'crowd', 'soap', 'driver.rb')
-require File.join(File.dirname(__FILE__), 'crowd', 'single_sign_on')
 
 
 class Crowd
@@ -174,8 +173,7 @@ class Crowd
   # Checks if the principal's current token is still valid.
   def self.is_valid_principal_token?(principal_token, validation_factors = {})
     response = authenticated_connection do
-      aovf = ArrayOfValidationFactor.new
-      validation_factors.each { |name,value| aovf << ValidationFactor.new(name, value)}
+      aovf = helper_validation_factors(validation_factors)
       arg = IsValidPrincipalToken.new(@@application_token, principal_token, aovf)
       server.isValidPrincipalToken(arg)      
     end    
@@ -615,6 +613,7 @@ class Crowd
   def self.helper_validation_factors(validation_factors = {})
     aovf = ArrayOfValidationFactor.new
     validation_factors.each { |name,value| aovf << ValidationFactor.new(name, value)}
+    aovf
   end
      
   # Has the application been authenticated?
