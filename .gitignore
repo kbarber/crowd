@@ -3,3 +3,5 @@ doc
 *~
 pkg
 lib/crowd/.DS_Store
+demo/test_token.rb
+
