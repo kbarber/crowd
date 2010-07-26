@@ -31,6 +31,7 @@ class Crowd
   @@crowd_app_name = nil
   @@crowd_app_pword = nil
   @@crowd_url = nil
+  @@crowd_validation_factors_need_user_agent = false
   @@crowd_cookie_tokenkey = 'crowd.token_key'
   @@crowd_session_tokenkey = 'session.tokenkey'
   @@crowd_session_validationinterval = 0
@@ -56,6 +57,13 @@ class Crowd
   #
   # Relevant for SSO:
   #
+
+  # This configuration depends on the Crowd java client library version that your other applications use.
+  # For crowd-integration-client-2.0.2.jar this needs to be 'true',
+  # for crowd-integration-client-2.0.5.jar this needs to be 'false'.
+  #
+  # Default is false.
+  def self.crowd_validation_factors_need_user_agent=(value); @@crowd_validation_factors_need_user_agent = value; end
   
   # The number of minutes to cache authentication validation in the session. 
   # If this value is set to 0, each HTTP request will be authenticated with the Crowd server. 
@@ -74,6 +82,7 @@ class Crowd
   # Has a good default.
   def self.crowd_session_lastvalidation=(value); @@crowd_session_lastvalidation = value; end
   
+  
   # for testing
   def self.application_token=(value); @@application_token = value; end
   def self.application_token; @@application_token; end
@@ -81,6 +90,7 @@ class Crowd
   def self.crowd_app_name; @@crowd_app_name; end
   def self.crowd_app_pword; @@crowd_app_pword; end
 
+  def self.crowd_validation_factors_need_user_agent; @@crowd_validation_factors_need_user_agent; end
   def self.crowd_session_tokenkey; @@crowd_session_tokenkey; end
   def self.crowd_cookie_tokenkey; @@crowd_cookie_tokenkey; end
   def self.crowd_session_validationinterval; @@crowd_session_validationinterval; end
