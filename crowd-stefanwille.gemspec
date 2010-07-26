@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{crowd-stefanwille}
-  s.version = "0.5.9"
+  s.version = "0.5.10"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Stefan Wille", "Evgeny Zislis", "Jason Rimmer & Daniel Morrison"]
-  s.date = %q{2010-07-20}
+  s.date = %q{2010-07-26}
   s.description = %q{A client for Atlassian[http://www.atlassian.com] Crowd[http://www.atlassian.com/crowd] v2.0. Tested with Crowd 2.0.2 and 2.0.5.}
   s.email = %q{post @nospam@ stefanwille.com}
   s.extra_rdoc_files = [
