@@ -1,6 +1,8 @@
 = crowd
 
-A client for Atlassian[http://www.atlassian.com] Crowd[http://www.atlassian.com/crowd] v2.0.5
+A Ruby client for Atlassian[http://www.atlassian.com] Crowd[http://www.atlassian.com/crowd] v2.0.
+
+For a Ruby on Rails plugin with full single sign on, see this blog[http://stefanwille.com/2010/07/rails-plugin-for-single-sign-on-with-atlassian-crowd/] and Github[http://github.com/stefanwille/crowd_rails].
 
 == INSTALL:
 
