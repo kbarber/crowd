@@ -131,8 +131,8 @@ class Crowd
   # Validation factors are essential for SSO interoperable with Atlassian's Java client library.
   #
   # To use SSO, set:
-  #   validation_factors = { 'USER_AGENT' => '...', 'REMOTE_ADDRESS' => '...' }
-  #   for proxy users { 'X_FORWARDED_FOR" => '...' } might be useful as well.
+  #   validation_factors = { 'User-Agent' => '...', 'remote_address' => '...' }
+  #   for proxy users { 'X-Forwarded-For" => '...' } might be required as well.
   def self.authenticate_principal(username, password, validation_factors = {})
     response = authenticated_connection do
       pword = PasswordCredential.new(password, false)
