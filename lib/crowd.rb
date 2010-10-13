@@ -682,6 +682,32 @@ class Crowd
     end
   end
 
+  # Create ArrayOfSearchRestriction from a ruby key=>value hash
+  def self.helper_search_restriction(search_restriction = {})
+    aosr = ArrayOfValidationFactor.new
+    search_restriction.each { |name,value| aosr << SearchRestriction.new(name, value)}
+    aosr
+  end
+
+  # Search for principals using key value pairs. For example:
+  # Crowd.search_principals({"mail" => "foo@bar", "givenName" => "Bob"})
+  def self.search_principals(search_restrictions)
+    response = authenticated_connection do
+      aosr = helper_search_restriction(search_restrictions)
+      arg = SearchPrincipals.new(@@application_token, aosr)
+      server.searchPrincipals(arg)      
+    end    
+    
+    case response
+      when SearchPrincipalsResponse
+        return response.out.collect { |p|
+          parse_principal(p)
+        }
+      else
+        raise AuthenticationException, response
+    end
+  end
+
   ##
   # Updates the password credential for a principal who is in the application's assigned directory.
   def self.update_principal_credential(principal, password)

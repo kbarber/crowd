@@ -63,7 +63,7 @@ Methods exercised (*implemented*, not implemented):
 * *removeRole*
 - resetPrincipalCredential
 - searchGroups
-- searchPrincipals
+* *searchPrincipals*
 - searchRoles
 - updateGroup
 * *updatePrincipalAttribute*
